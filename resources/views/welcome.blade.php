@@ -18,7 +18,7 @@
 
                     <br>
                     <br>
-                    Read more <a href="{{ route('about') }}"> about us </a>
+                    {{-- Read more <a href="{{ route('about') }}"> about us </a> --}}
                 </div>
             </div>
         </div>
