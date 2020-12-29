@@ -22,7 +22,7 @@
               <form method="POST" action="{{ route('admin.uploads.store') }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
-                  <label for="video">Video (iframe link)</label>
+                  <label for="video">Video (url link from embed video from iframe)</label>
                   <input type="text" class="form-control" id="video" name="video" value="{{ old('video') }}">
                 </div>
                 <div class="form-group">

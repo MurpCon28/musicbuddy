@@ -16,7 +16,7 @@
             <div class="card data-id="{{ $upload->id }}"">
               <a href="{{ route('user.uploads.show', $upload->id) }}">
               {{ $upload->type->name }}
-              {{ $upload->video }}
+              <iframe width="560" height="315" src="{{ url($upload->video) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="card-body">
                 <h5 class="card-title">{{ $upload->title }}</h5>
                 <p class="card-text">{{ $upload->description }}</p>

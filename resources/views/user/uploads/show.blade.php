@@ -9,8 +9,8 @@
               Video Type: {{ $upload->type->name }}
             </div>
 
-            {{ $upload->video }}
-
+            <iframe width="728" height="375" src="{{ url($upload->video) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br>
             <div class="class-body">
               <h5 class="card-title">{{ $upload->title }}</h5>
               <p class="card-text">{{ $upload->description }}</p>

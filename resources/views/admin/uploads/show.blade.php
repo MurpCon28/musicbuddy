@@ -8,8 +8,7 @@
           <div class="card-header">
               Video Type: {{ $upload->type->name }}
             </div>
-
-            {{ $upload->video }}
+            <iframe width="560" height="315" src="{{ url($upload->video) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
             <div class="class-body">
               <h5 class="card-title">{{ $upload->title }}</h5>
