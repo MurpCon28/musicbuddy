@@ -22,8 +22,13 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a class="navbar-brand" href="{{ url('/') }}">
+          {{-- <a class="navbar-brand" href="{{ url('/') }}">
               {{ config('app.name', 'Laravel') }}
+          </a> --}}
+          <a class="navbar-brand" href="{{ url('/') }}">
+            <div class="logo-image">
+             <img src="/logo/musicbuddylogoforsite.png" class="img-fluid">
+           </div>
           </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -76,6 +81,9 @@
                           </a>
 
                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('admin.uploads.create') }}">
+                                Upload Video
+                            </a>
                               <a class="dropdown-item" href="{{ route('logout') }}"
                                  onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();">

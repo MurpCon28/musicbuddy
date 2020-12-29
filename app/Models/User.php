@@ -41,6 +41,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function uploads()
+    {
+      return $this->hasMany('App\Models\Upload');
+    }
+
     public function roles() {
       return $this->belongsToMany('App\Models\Role' , 'user_role');
     }

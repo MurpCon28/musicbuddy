@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">About</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,10 +14,7 @@
                         </div>
                     @endif
 
-                    {{-- {{ __('You are logged in!') }} --}}
-                    You are logged in as an admin.
-                    <br>
-                    <a href="{{ route('admin.uploads.index') }}"> Videos </a>
+                    This is the about page! We are a learning site for players! <a href="{{ route('welcome') }}"> back </a>
                 </div>
             </div>
         </div>

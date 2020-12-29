@@ -16,6 +16,8 @@
 
                     {{-- {{ __('You are logged in!') }} --}}
                     You are logged in as an ordinary user.
+                    <br>
+                    <a href="{{ route('admin.uploads.index') }}"> Videos </a>
                 </div>
             </div>
         </div>

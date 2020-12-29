@@ -1,3 +1,16 @@
 .navbar{
   background-color: #0a00bf;
 }
+
+.logo-image{
+   width: 46px;
+   height: 46px;
+   border-radius: 50%;
+   overflow: hidden;
+   margin-top: -6px;
+   background-color: #3026e7;
+}
+
+.body{
+  background-color: #f0f0f0;
+}
