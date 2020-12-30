@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Models\Upload;
 
 class HomeController extends Controller
 {
@@ -36,5 +37,11 @@ class HomeController extends Controller
       }
 
         return redirect()->route($home);
+
+        $uploads = Upload::all();
+
+        return view('uploads', [
+          'uploads' => $uploads
+        ]);
     }
 }

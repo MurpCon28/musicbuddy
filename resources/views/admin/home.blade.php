@@ -15,7 +15,9 @@
                     @endif
 
                     {{-- {{ __('You are logged in!') }} --}}
-                    You are logged in as an admin.
+                    <h2>Welcome, {{ Auth::user()->name }}</h2>
+                    <br>
+                    <h4>You are logged in as an admin.</h4>
                     <br>
                     <a href="{{ route('admin.uploads.index') }}"> Videos </a>
                 </div>

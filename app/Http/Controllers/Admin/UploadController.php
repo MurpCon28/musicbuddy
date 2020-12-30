@@ -164,7 +164,7 @@ class UploadController extends Controller
       $upload = Upload::findOrFail($id);
       $upload->delete();
 
-      $request->session()->flash('danger', 'Video deleted successfuly');
+      // $request->session()->flash('danger', 'Video deleted successfuly');
 
       return redirect()->route('admin.uploads.index');
     }

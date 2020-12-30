@@ -3,19 +3,21 @@
 @section('content')
   <div class="container">
     <div class="row">
+      <p id="alert-message" class="alert collapse"></p>
+      <br>
+      <br>
+      @if (count($uploads) == 0)
+        <p>There are no uploads!</p>
+      @else
+        @foreach ($uploads as $upload)
       <div class="col-md-12">
 
-          <p id="alert-message" class="alert collapse"></p>
-          <a href="{{ route('admin.uploads.create') }}" class="btn btn-primary float-right">Add</a>
-
           <div class="card-group">
-            @if (count($uploads) == 0)
-              <p>There are no uploads!</p>
-            @else
-              @foreach ($uploads as $upload)
             <div class="card data-id="{{ $upload->id }}"">
-              <a href="{{ route('user.uploads.show', $upload->id) }}">
-              {{ $upload->type->name }}
+              <a href="{{ route('admin.uploads.show', $upload->id) }}">
+              <div class="typeBanner">
+                {{ $upload->type->name }}
+              </div>
               <iframe width="560" height="315" src="{{ url($upload->video) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="card-body">
                 <h5 class="card-title">{{ $upload->title }}</h5>
@@ -25,7 +27,6 @@
               </div>
               </a>
             </div>
-            @endforeach
             <div class="card">
               <img class="card-img-top" src="..." alt="Card image cap">
               <div class="card-body">
@@ -35,7 +36,8 @@
               </div>
             </div>
           </div>
-          @endif
+          <br>
+          <br>
 
           {{-- <div class="card">
             <div class="card-header">
@@ -74,6 +76,8 @@
           </div>
         </div> --}}
       </div>
+    @endforeach
+    @endif
     </div>
   </div>
 @endsection

@@ -26,6 +26,7 @@ Route::get('/about', [PageController::class,  'about'])->name('about');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/uploads', [App\Http\Controllers\HomeController::class, 'index'])->name('uploads');
 
 Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin.home');
 Route::get('/user/home', [UserHomeController::class, 'index'])->name('user.home');
