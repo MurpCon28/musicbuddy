@@ -30,7 +30,7 @@
           <div class="card">
             <div class="card-header">
               Comments
-              <a href="{{ route('admin.comments.create', $upload->id) }}" class="btn btn-primary">Add</a>
+              <a href="{{ route('admin.comments.create', $upload->id) }}" class="btn btn-primary float-right">Add</a>
             </div>
           <div class="card-body">
             @if (count($upload->comments) == 0)
