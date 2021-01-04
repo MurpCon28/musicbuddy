@@ -23,4 +23,8 @@ class Upload extends Model
     {
       return $this->belongsTo('App\Models\Tag');
     }
+
+    public function comments() {
+      return $this->hasMany('App\Models\Comment');
+    }
 }

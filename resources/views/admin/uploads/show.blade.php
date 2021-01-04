@@ -24,6 +24,43 @@
           </form>
           </div>
         </div>
+
+        <br>
+
+          <div class="card">
+            <div class="card-header">
+              Comments
+              <a href="{{ route('admin.comments.create', $upload->id) }}" class="btn btn-primary">Add</a>
+            </div>
+          <div class="card-body">
+            @if (count($upload->comments) == 0)
+            <p>There are no comments for this video.</p>
+            @else
+            <table class="table">
+                <thead>
+                    <th>Comment</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    @foreach ($upload->comments as $comment)
+                    <tr>
+                        <th>{{ $comment->body }}</th>
+                        <th>{{ $comment->user->name }}</th>
+                        <th>
+                            <form style="display:inline-block" method="POST" action="{{ route('admin.comments.destroy', [ 'id' => $upload->id, 'rid' => $comment->id]) }}">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <button type="submit" class="form-control btn btn-danger">Delete</a>
+                            </form>
+                        </th>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            @endif
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

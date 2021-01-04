@@ -46,6 +46,35 @@
             <a href="{{ route('user.uploads.index') }}" class="btn btn-default">Back</a>
           </div>
         </div>
+
+        <br>
+
+          <div class="card">
+            <div class="card-header">
+              Comments
+              <a href="{{ route('user.comments.create', $upload->id) }}" class="btn btn-primary">Add</a>
+            </div>
+          <div class="card-body">
+            @if (count($upload->comments) == 0)
+            <p>There are no comments for this video.</p>
+            @else
+            <table class="table">
+                <thead>
+                    <th>Comment</th>
+                </thead>
+                <tbody>
+                    @foreach ($upload->comments as $comment)
+                    <tr>
+                        <th>{{ $comment->body }}</th>
+                        <th>{{ $comment->user->name }}</th>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            @endif
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

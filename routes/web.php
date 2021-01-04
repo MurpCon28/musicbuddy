@@ -9,6 +9,9 @@ use App\Http\Controllers\Admin\UploadController as AdminUploadController;
 use App\Http\Controllers\User\HomeController as UserHomeController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 
+use App\Http\Controllers\User\CommentController as UserCommentController;
+use App\Http\Controllers\Admin\CommentController as AdminCommentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,3 +45,10 @@ Route::post('/admin/uploads/store', [AdminUploadController::class, 'store'])->na
 Route::get('/admin/uploads/{id}/edit', [AdminUploadController::class, 'edit'])->name('admin.uploads.edit');
 Route::put('/admin/uploads/{id}', [AdminUploadController::class, 'update'])->name('admin.uploads.update');
 Route::delete('/admin/uploads/{id}', [AdminUploadController::class, 'destroy'])->name('admin.uploads.destroy');
+
+Route::get('/admin/uploads/{id}/comments/create', [AdminCommentController::class, 'create'])->name('admin.comments.create');
+Route::post('/admin/uploads/{id}/comments/', [AdminCommentController::class, 'store'])->name('admin.comments.store');
+Route::delete('/admin/uploads/{id}/comments/{rid}', [AdminCommentController::class, 'destroy'])->name('admin.comments.destroy');
+
+Route::get('/user/uploads/{id}/comments/create', [UserCommentController::class, 'create'])->name('user.comments.create');
+Route::post('/user/uploads/{id}/comments/', [UserCommentController::class, 'store'])->name('user.comments.store');

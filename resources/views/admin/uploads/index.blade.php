@@ -28,11 +28,18 @@
               </a>
             </div>
             <div class="card">
-              <img class="card-img-top" src="..." alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h5 class="card-title">Reviews <a href="{{ route('admin.comments.create', $upload->id) }}" class="btn btn-primary">Add</a></h5>
+                <ul>
+                  @if (count($upload->comments) == 0)
+                    <p>There are no comments for this video.</p>
+                  @else
+                    @foreach ($upload->comments as $comment)
+                      <p class="card-text">{{ $comment->body }}<br>
+                      <span><small class="text-muted">{{ $comment->user->name }}</small></span></p>
+                    @endforeach
+                  @endif
+                </ul>
               </div>
             </div>
           </div>
