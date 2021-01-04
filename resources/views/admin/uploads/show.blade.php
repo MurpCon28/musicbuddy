@@ -39,6 +39,7 @@
             <table class="table">
                 <thead>
                     <th>Comment</th>
+                    <th>User</th>
                     <th>Actions</th>
                 </thead>
                 <tbody>

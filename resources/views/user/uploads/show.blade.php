@@ -52,7 +52,7 @@
           <div class="card">
             <div class="card-header">
               Comments
-              <a href="{{ route('user.comments.create', $upload->id) }}" class="btn btn-primary">Add</a>
+              <a href="{{ route('user.comments.create', $upload->id) }}" class="btn btn-primary float-right">Add</a>
             </div>
           <div class="card-body">
             @if (count($upload->comments) == 0)
@@ -60,7 +60,8 @@
             @else
             <table class="table">
                 <thead>
-                    <th>Comment</th>
+                  <th>Comment</th>
+                  <th>User</th>
                 </thead>
                 <tbody>
                     @foreach ($upload->comments as $comment)
