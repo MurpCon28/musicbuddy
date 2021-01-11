@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
 <div class="container">
@@ -19,7 +19,7 @@
                     <br>
                     <h4>You are logged in as an admin.</h4>
                     <br>
-                    <a href="{{ route('admin.uploads.index') }}"> Videos </a>
+                    <a href="{{ route('admin.uploads.create') }}"> Upload Video </a>
                 </div>
             </div>
         </div>

@@ -12,6 +12,9 @@ use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\User\CommentController as UserCommentController;
 use App\Http\Controllers\Admin\CommentController as AdminCommentController;
 
+use App\Http\Controllers\User\GigController as UserGigController;
+use App\Http\Controllers\Admin\GigController as AdminGigController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,3 +55,14 @@ Route::delete('/admin/uploads/{id}/comments/{rid}', [AdminCommentController::cla
 
 Route::get('/user/uploads/{id}/comments/create', [UserCommentController::class, 'create'])->name('user.comments.create');
 Route::post('/user/uploads/{id}/comments/', [UserCommentController::class, 'store'])->name('user.comments.store');
+
+Route::get('/user/gigs/', [UserGigController::class, 'index'])->name('user.gigs.index');
+Route::get('/user/gigs/{id}', [UserGigController::class, 'show'])->name('use.gigs.show');
+
+Route::get('/admin/gigs', [AdminGigController::class, 'index'])->name('admin.gigs.index');
+Route::get('/admin/gigs.create', [AdminGigController::class, 'create'])->name('admin.gigs.create');
+Route::get('/admin/gigs/{id}', [AdminGigController::class, 'show'])->name('admin.gigs.show');
+Route::post('/admin/gigs/store', [AdminGigController::class, 'store'])->name('admin.gigs.store');
+Route::get('/admin/gigs/{id}/edit', [AdminGigController::class, 'edit'])->name('admin.gigs.edit');
+Route::put('/admin/gigs/{id}', [AdminGigController::class, 'update'])->name('admin.gigs.update');
+Route::delete('/admin/gigs/{id}', [AdminGigController::class, 'destroy'])->name('admin.gigs.destroy');

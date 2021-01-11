@@ -75,7 +75,7 @@ class UploadController extends Controller
       $upload->tag_id = $request->input('tag_id');
       $upload->save();
 
-      $request->session()->flash('success', 'Video added successfuly');
+      // $request->session()->flash('success', 'Video added successfuly');
 
       return redirect()->route('admin.uploads.index');
 
@@ -147,7 +147,7 @@ class UploadController extends Controller
             $upload->tag_id = $request->input('tag_id');
             $upload->save();
 
-            $request->session()->flash('info', 'Video edited successfuly');
+            // $request->session()->flash('info', 'Video edited successfuly');
 
             return redirect()->route('admin.uploads.index');
 
