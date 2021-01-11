@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\County;
 use App\Models\Gig;
 
 class GigController extends Controller
@@ -39,7 +41,13 @@ class GigController extends Controller
      */
     public function create()
     {
-        return view('admin.gigs.create');
+      $users = User::all();
+      $counties = County::all();
+
+        return view('admin.gigs.create', [
+          'users' => $users,
+          'counties' => $counties
+        ]);
     }
 
     /**
@@ -51,19 +59,23 @@ class GigController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-      'name' => 'required|max:191',
+      'bandName' => 'required|max:191',
       'genre' => 'required|max:191',
       'location' => 'required|max:191',
-      'year' => 'required|integer|min:1900',
-      'price' => 'required|numeric|min:0'
+      'dateTime' => 'required',
+      'price' => 'required|numeric|min:1',
+      'user_id' => 'required',
+      'county_id' => 'required'
     ]);
 
     $gig = new Gig();
-    $gig->name = $request->input('name');
+    $gig->name = $request->input('bandName');
     $gig->genre = $request->input('genre');
     $gig->location = $request->input('location');
-    $gig->year = $request->input('year');
+    $gig->dateTime = $request->input('dateTime');
     $gig->price = $request->input('price');
+    $gig->user_id = $request->input('user_id');
+    $gig->county_id = $request->input('county_id');
     $gig->save();
 
     return redirect()->route('admin.gigs.index');
@@ -93,9 +105,13 @@ class GigController extends Controller
     public function edit($id)
     {
       $gig = Gig::findOrFail($id);
+      $users = User::all();
+      $counties = County::all();
 
     return view('admin.gigs.edit', [
-    'gig' => $gig
+    'gig' => $gig,
+    'users' => $users,
+    'counties' => $counties
     ]);
     }
 
@@ -109,20 +125,24 @@ class GigController extends Controller
     public function update(Request $request, $id)
     {
       $request->validate([
-      'name' => 'required|max:191',
-      'genre' => 'required|max:191',
-      'location' => 'required|max:191',
-      'year' => 'required|integer|min:1900',
-      'price' => 'required|numeric|min:0'
+        'bandName' => 'required|max:191',
+        'genre' => 'required|max:191',
+        'location' => 'required|max:191',
+        'dateTime' => 'required',
+        'price' => 'required|numeric|min:1',
+        'user_id' => 'required',
+        'county_id' => 'required'
     ]);
 
     $gig = Gig::findOrFail($id);
 
-    $gig->name = $request->input('name');
+    $gig->name = $request->input('bandName');
     $gig->genre = $request->input('genre');
     $gig->location = $request->input('location');
-    $gig->year = $request->input('year');
+    $gig->dateTime = $request->input('dateTime');
     $gig->price = $request->input('price');
+    $gig->user_id = $request->input('user_id');
+    $gig->county_id = $request->input('county_id');
     $gig->save();
 
     return redirect()->route('admin.gigs.index');

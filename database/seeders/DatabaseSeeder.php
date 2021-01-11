@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
       $this->call(TypeSeeder::class);
       $this->call(UploadSeeder::class);
       $this->call(CommentSeeder::class);
+      $this->call(CountySeeder::class);
+      $this->call(GigSeeder::class);
     }
 }

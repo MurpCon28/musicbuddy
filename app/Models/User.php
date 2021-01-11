@@ -50,6 +50,11 @@ class User extends Authenticatable
       return $this->hasMany('App\Models\Upload');
     }
 
+    public function gigs()
+    {
+      return $this->hasMany('App\Models\Gig');
+    }
+
     public function roles() {
       return $this->belongsToMany('App\Models\Role' , 'user_role');
     }
