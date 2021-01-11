@@ -1,41 +1,27 @@
-@extends('user.layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-12 col-md-offset-2">
         <div class="card">
           <div class="card-header">
-            Gig: {{ $gig->name }}
+            Gig: {{ $gig->bandName }}
           </div>
 
-          <div class="card-body">
-            <table class="table table-hover">
-              <tbody>
-                <tr>
-                  <td>Name</td>
-                  <td>{{ $gig->name }}</td>
-                </tr>
-                <tr>
-                  <td>Genre</td>
-                  <td>{{ $gig->genre }}</td>
-                </tr>
-                <tr>
-                  <td>Location</td>
-                  <td>{{ $gig->location }}</td>
-                </tr>
-                <tr>
-                  <td>Year</td>
-                  <td>{{ $gig->year }}</td>
-                </tr>
-                <tr>
-                  <td>Price</td>
-                  <td>{{ $gig->price }}</td>
-                </tr>
-              </tbody>
-            </table>
+                <div class="col-md-6">
+                  <img src="..." alt="...">
+                </div>
 
-            <a href="{{ route('user.gigs.index') }}" class="btn btn-default">Back</a>
+                <div class="col-md-6">
+                <div class="class-body">
+                  <h5 class="card-title">{{ $gig->bandName }}</h5>
+                  <p class="card-text">Loction: {{ $gig->location }}, Co. {{ $gig->county->name }} <br> Date and Time (Y-M-D): {{ $gig->dateTime }} <br> Price: €{{ $gig->price }} <br> Genre: {{ $gig->genre }}</p>
+                  <p class="card-text"><small class="text-muted">Posted By: {{ $gig->user->name }}</small></p>
+                  <a href="{{ route('user.gigs.index') }}" class="btn btn-default">Back</a>
+              </div>
+              <br>
+            </div>
           </div>
         </div>
       </div>
