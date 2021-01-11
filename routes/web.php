@@ -57,7 +57,9 @@ Route::get('/user/uploads/{id}/comments/create', [UserCommentController::class, 
 Route::post('/user/uploads/{id}/comments/', [UserCommentController::class, 'store'])->name('user.comments.store');
 
 Route::get('/user/gigs/', [UserGigController::class, 'index'])->name('user.gigs.index');
-Route::get('/user/gigs/{id}', [UserGigController::class, 'show'])->name('use.gigs.show');
+Route::get('/user/gigs/{id}', [UserGigController::class, 'show'])->name('user.gigs.show');
+Route::get('/user/gigs.create', [UserGigController::class, 'create'])->name('user.gigs.create');
+Route::post('/user/gigs/store', [UserGigController::class, 'store'])->name('user.gigs.store');
 
 Route::get('/admin/gigs', [AdminGigController::class, 'index'])->name('admin.gigs.index');
 Route::get('/admin/gigs.create', [AdminGigController::class, 'create'])->name('admin.gigs.create');

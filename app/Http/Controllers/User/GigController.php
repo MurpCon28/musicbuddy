@@ -41,7 +41,13 @@ class GigController extends Controller
      */
     public function create()
     {
-        //
+      $users = User::all();
+      $counties = County::all();
+
+        return view('user.gigs.create', [
+          'users' => $users,
+          'counties' => $counties
+        ]);
     }
 
     /**
@@ -52,7 +58,27 @@ class GigController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $request->validate([
+      'bandName' => 'required|max:191',
+      'genre' => 'required|max:191',
+      'location' => 'required|max:191',
+      'dateTime' => 'required',
+      'price' => 'required|numeric|min:1',
+      'user_id' => 'required',
+      'county_id' => 'required'
+    ]);
+
+    $gig = new Gig();
+    $gig->name = $request->input('bandName');
+    $gig->genre = $request->input('genre');
+    $gig->location = $request->input('location');
+    $gig->dateTime = $request->input('dateTime');
+    $gig->price = $request->input('price');
+    $gig->user_id = $request->input('user_id');
+    $gig->county_id = $request->input('county_id');
+    $gig->save();
+
+    return redirect()->route('user.gigs.index');
     }
 
     /**

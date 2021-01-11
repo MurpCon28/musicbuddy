@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
   <div class="container">
@@ -19,7 +19,7 @@
                 </ul>
               </div>
             @endif
-            <form method="POST" action="{{ route('admin.gigs.store') }}">
+            <form method="POST" action="{{ route('user.gigs.store') }}">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <div class="form-group">
                 <label for="title">Name</label>
@@ -42,7 +42,7 @@
                 <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}"/>
               </div>
               <div class="float-right">
-                <a href="{{ route('admin.gigs.index') }}" class="btn btn-default">Cancel</a>
+                <a href="{{ route('user.gigs.index') }}" class="btn btn-default">Cancel</a>
                 <button type="submit" class="btn btn-primary pull-right">Submit</button>
               </div>
             </form>
