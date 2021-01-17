@@ -19,7 +19,7 @@
                     <br>
                     <h4>You are logged in as an ordinary user.</h4>
                     <br>
-                    <a href="{{ route('user.uploads.index') }}"> Videos </a>
+                    <a href="{{ route('user.uploads.create') }}"> Upload Video </a>
 
                 </div>
             </div>

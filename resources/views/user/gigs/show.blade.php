@@ -6,12 +6,15 @@
       <div class="col-md-12 col-md-offset-2">
         <div class="card">
           <div class="card-header">
-            Gig: {{ $gig->bandName }}
+            Gig: {{ $gig->bandName }} <a href="https://www.ticketmaster.ie/" class="btn btn-info float-right">Tickets</a>
           </div>
 
-                <div class="col-md-6">
-                  <img src="{{ asset('storage/images/' . $gig->image) }}" width="150" />
-                </div>
+                  <div class="col-md-6">
+                    <br>
+                    <img src="{{ asset('storage/images/' . $gig->image) }}" width="500" />
+                    <br>
+                    <br>
+                  </div>
 
                 <div class="col-md-6">
                 <div class="class-body">

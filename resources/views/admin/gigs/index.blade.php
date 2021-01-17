@@ -58,7 +58,7 @@
                 @foreach ($gigs as $gig)
                   <div class="card-group">
                   <div class="row">
-                  <div class="col-mb-12 data-id="{{ $gig->id }}"">
+                  <div class="card-mb-12 data-id="{{ $gig->id }}"" style="max-width: 1040px;">
                     <a href="{{ route('admin.gigs.show', $gig->id) }}">
                       <div class="col-md-4">
                         <img src="{{ asset('storage/images/' . $gig->image) }}" width="300" />
