@@ -61,7 +61,7 @@
                   <div class="card-mb-12 data-id="{{ $gig->id }}"" style="max-width: 1040px;">
                     <a href="{{ route('user.gigs.show', $gig->id) }}">
                       <div class="col-md-4">
-                        <img src="..." alt="...">
+                        <img src="{{ asset('storage/images/' . $gig->image) }}" width="150" />
                       </div>
                         <div class="col-md-12">
                           <div class="card-body">

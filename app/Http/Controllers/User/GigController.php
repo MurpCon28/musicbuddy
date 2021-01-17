@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\County;
 use App\Models\Gig;
+use Storage;
 
 class GigController extends Controller
 {
@@ -64,11 +65,22 @@ class GigController extends Controller
       'location' => 'required|max:191',
       'dateTime' => 'required',
       'price' => 'required|numeric|min:1',
+      'image' => 'file|image',
       'user_id' => 'required',
       'county_id' => 'required'
     ]);
 
     $gig = new Gig();
+
+    if ($request->hasFile('image')) {
+      $image = $request->file('image');
+      $extension = $image->getClientOriginalExtension();
+      $filename = date('Y-m-d-His') . '_' . $request->input('bandName') . '.' . $extension;
+
+      $path = $image->storeAs('public/images', $filename);
+      $gig->image = $filename;
+    }
+
     $gig->name = $request->input('bandName');
     $gig->genre = $request->input('genre');
     $gig->location = $request->input('location');

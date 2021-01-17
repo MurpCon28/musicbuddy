@@ -19,9 +19,14 @@
                 </ul>
               </div>
             @endif
-            <form method="POST" action="{{ route('admin.gigs.update', $gig->id) }}">
+            <form method="POST" action="{{ route('admin.gigs.update', $gig->id) }}" enctype="multipart/form-data">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="_method" value="PUT">
+                <img src="{{ asset('storage/images/' . $gig->image) }}" width="150" />
+                <div class="form-group">
+                  <label for="image">Artist/Band Image</label>
+                  <input type="file" class="form-control" id="image" name="image">
+                </div>
               <div class="form-group">
                 <label for="bandName">Artist/Band Name</label>
                 <input type="text" class="form-control" id="bandName" name="bandName" value="{{ old('bandName', $gig->bandName) }}"/>

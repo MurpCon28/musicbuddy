@@ -10,13 +10,16 @@
           </div>
 
                   <div class="col-md-6">
-                    <img src="..." alt="...">
+                    <br>
+                    <img src="{{ asset('storage/images/' . $gig->image) }}" width="500" />
+                    <br>
+                    <br>
                   </div>
 
                   <div class="col-md-6">
                   <div class="class-body">
                     <h5 class="card-title">{{ $gig->bandName }}</h5>
-                    <p class="card-text">Loction: {{ $gig->location }}, Co. {{ $gig->county->name }} <br> Date and Time (Y-M-D): {{ $gig->dateTime }} <br> Price: €{{ $gig->price }} <br> Genre: {{ $gig->genre }}</p>
+                    <p class="card-text"><b>Loction:</b> {{ $gig->location }}, Co. {{ $gig->county->name }} <br> <b>Date and Time (Y-M-D):</b> {{ $gig->dateTime }} <br> <b>Price:</b> €{{ $gig->price }} <br> <b>Genre:</b> {{ $gig->genre }}</p>
                     <p class="card-text"><small class="text-muted">Posted By: {{ $gig->user->name }}</small></p>
                     <a href="{{ route('admin.gigs.index') }}" class="btn btn-default">Back</a>
                     <a href="{{ route('admin.gigs.edit', $gig->id) }}" class="btn btn-warning">Edit</a>

@@ -55,6 +55,7 @@ class GigSeeder extends Seeder
       $wicklow = County::where('name', "Wicklow")->first();
 
       $gig = new Gig();
+      $gig->image = "the-scratch.png";
       $gig->bandName = "The Scratch";
       $gig->genre = "Acoustic Rock";
       $gig->location = "Olympia Theatre";
@@ -65,6 +66,7 @@ class GigSeeder extends Seeder
       $gig->save();
 
       $gig = new Gig();
+      $gig->image = "the-boston-mules.png";
       $gig->bandName = "The Boston Mules";
       $gig->genre = "Indie Rock";
       $gig->location = "Crane Lane Theatre";
@@ -75,6 +77,7 @@ class GigSeeder extends Seeder
       $gig->save();
 
       $gig = new Gig();
+      $gig->image = "green-ape.png";
       $gig->bandName = "Green Apes";
       $gig->genre = "Rock";
       $gig->location = "Dolan’s Pub";

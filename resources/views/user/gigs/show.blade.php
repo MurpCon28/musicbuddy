@@ -10,7 +10,7 @@
           </div>
 
                 <div class="col-md-6">
-                  <img src="..." alt="...">
+                  <img src="{{ asset('storage/images/' . $gig->image) }}" width="150" />
                 </div>
 
                 <div class="col-md-6">
