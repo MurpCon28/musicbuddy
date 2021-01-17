@@ -25,6 +25,7 @@
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   <button type="submit" class="form-control btn btn-danger">Delete</a>
                   </form>
+                  <button type="button" href="https://www.ticketmaster.ie/" class="btn btn-info float-right">Tickets</button>
               </div>
               <br>
             </div>
