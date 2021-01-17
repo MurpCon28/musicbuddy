@@ -84,7 +84,7 @@
                           </a>
 
                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="{{ route('admin.uploads.create') }}">
+                              <a class="dropdown-item" href="{{ route('user.uploads.create') }}">
                                   Upload Video
                               </a>
                               <a class="dropdown-item" href="{{ url('home') }}">

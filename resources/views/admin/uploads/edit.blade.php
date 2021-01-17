@@ -43,7 +43,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="user">User Name</label>
+                  <label for="type">Type</label>
                   <select name="type_id">
                     @foreach ($types as $type)
                       <option value="{{ $type->id }}" {{ (old('type_id', $upload->type->id) == $type->id) ? "selected" : "" }}>{{ $type->name }}</option>

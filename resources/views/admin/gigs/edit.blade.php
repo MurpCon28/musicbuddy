@@ -23,8 +23,16 @@
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="_method" value="PUT">
               <div class="form-group">
-                <label for="title">Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $gig->name) }}"/>
+                <label for="bandName">Artist/Band Name</label>
+                <input type="text" class="form-control" id="bandName" name="bandName" value="{{ old('bandName', $gig->bandName) }}"/>
+              </div>
+              <div class="form-group">
+                <label for="user">User Name</label>
+                <select name="user_id">
+                  @foreach ($users as $user)
+                    <option value="{{ $user->id }}" {{ (old('user_id', $gig->user->id) == $user->id) ? "selected" : "" }}>{{ $user->name }}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
                 <label for="title">Genre</label>
@@ -35,11 +43,19 @@
                 <input type="text" class="form-control" id="location" name="location" value="{{ old('location', $gig->location) }}"/>
               </div>
               <div class="form-group">
-                <label for="title">Year</label>
-                <input type="text" class="form-control" id="year" name="year" value="{{ old('year', $gig->year) }}"/>
+                <label for="county">County</label>
+                <select name="county_id">
+                  @foreach ($counties as $county)
+                    <option value="{{ $county->id }}" {{ (old('county_id', $gig->county->id) == $county->id) ? "selected" : "" }}>{{ $county->name }}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
-                <label for="title">Price</label>
+                <label for="dateTime">Date & Time</label>
+                <input type="datetime-local" class="form-control" id="dateTime" name="dateTime" value="{{ old('dateTime', $gig->dateTime) }}"/>
+              </div>
+              <div class="form-group">
+                <label for="price">Price</label>
                 <input type="text" class="form-control" id="price" name="price" value="{{ old('price', $gig->price) }}"/>
               </div>
               <div class="float-right">
