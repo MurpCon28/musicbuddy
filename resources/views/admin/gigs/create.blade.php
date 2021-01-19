@@ -29,14 +29,14 @@
                 <label for="bandName">Artist/Band Name</label>
                 <input type="text" class="form-control" id="bandName" name="bandName" value="{{ old('bandName') }}"/>
               </div>
-              <div class="form-group">
+              {{-- <div class="form-group">
                 <label for="user">User Name</label>
                 <select name="user_id">
                   @foreach ($users as $user)
                     <option value="{{ $user->id }}" {{ (old('user_id') == $user->id) ? "selected" : "" }}>{{ $user->name }}</option>
                   @endforeach
                 </select>
-              </div>
+              </div> --}}
               <div class="form-group">
                 <label for="genre">Genre</label>
                 <input type="text" class="form-control" id="genre" name="genre" value="{{ old('genre') }}"/>

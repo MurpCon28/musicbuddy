@@ -34,14 +34,14 @@
                   <label for="description">Description</label>
                   <input type="text" class="form-control" id="description" name="description" value="{{ old('description', $upload->description) }}">
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                   <label for="user">User Name</label>
                   <select name="user_id">
                     @foreach ($users as $user)
                       <option value="{{ $user->id }}" {{ (old('user_id', $upload->user->id) == $user->id) ? "selected" : "" }}>{{ $user->name }}</option>
                     @endforeach
                   </select>
-                </div>
+                </div> --}}
                 <div class="form-group">
                   <label for="type">Type</label>
                   <select name="type_id">

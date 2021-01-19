@@ -8,6 +8,7 @@ use App\Models\Upload;
 use App\Models\User;
 use App\Models\Type;
 use App\Models\Tag;
+use Auth;
 
 class UploadController extends Controller
 {
@@ -61,7 +62,6 @@ class UploadController extends Controller
         'video' => 'required|max:500',
         'title' => 'required|max:191',
         'description' => 'required|max:191',
-        'user_id' => 'required',
         'type_id' => 'required',
         'tag_id' => 'required'
       ]);
@@ -70,7 +70,7 @@ class UploadController extends Controller
       $upload->video = $request->input('video');
       $upload->title = $request->input('title');
       $upload->description = $request->input('description');
-      $upload->user_id = $request->input('user_id');
+      $upload->user_id = Auth::id();
       $upload->type_id = $request->input('type_id');
       $upload->tag_id = $request->input('tag_id');
       $upload->save();
@@ -131,7 +131,6 @@ class UploadController extends Controller
         'video' => 'required|max:500',
         'title' => 'required|max:191',
         'description' => 'required|max:191',
-        'user_id' => 'required',
         'type_id' => 'required',
         'tag_id' => 'required'
       ]);
@@ -140,7 +139,7 @@ class UploadController extends Controller
       $upload->video = $request->input('video');
       $upload->title = $request->input('title');
       $upload->description = $request->input('description');
-      $upload->user_id = $request->input('user_id');
+      $upload->user_id = Auth::id();
       $upload->type_id = $request->input('type_id');
       $upload->tag_id = $request->input('tag_id');
       $upload->save();

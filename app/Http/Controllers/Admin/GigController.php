@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\County;
 use App\Models\Gig;
 use Storage;
+use Auth;
 
 class GigController extends Controller
 {
@@ -66,7 +67,6 @@ class GigController extends Controller
       'dateTime' => 'required',
       'price' => 'required|numeric|min:1',
       'image' => 'file|image',
-      'user_id' => 'required',
       'county_id' => 'required'
     ]);
 
@@ -86,7 +86,7 @@ class GigController extends Controller
     $gig->location = $request->input('location');
     $gig->dateTime = $request->input('dateTime');
     $gig->price = $request->input('price');
-    $gig->user_id = $request->input('user_id');
+    $gig->user_id = Auth::id();
     $gig->county_id = $request->input('county_id');
     $gig->save();
 
@@ -143,7 +143,6 @@ class GigController extends Controller
         'dateTime' => 'required',
         'price' => 'required|numeric|min:1',
         'image' => 'file|image',
-        'user_id' => 'required',
         'county_id' => 'required'
     ]);
 
@@ -163,7 +162,7 @@ class GigController extends Controller
     $gig->location = $request->input('location');
     $gig->dateTime = $request->input('dateTime');
     $gig->price = $request->input('price');
-    $gig->user_id = $request->input('user_id');
+    $gig->user_id = Auth::id();
     $gig->county_id = $request->input('county_id');
     $gig->save();
 
