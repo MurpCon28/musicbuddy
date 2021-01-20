@@ -81,7 +81,7 @@ class GigController extends Controller
       $gig->image = $filename;
     }
 
-    $gig->name = $request->input('bandName');
+    $gig->bandName = $request->input('bandName');
     $gig->genre = $request->input('genre');
     $gig->location = $request->input('location');
     $gig->dateTime = $request->input('dateTime');
@@ -157,7 +157,7 @@ class GigController extends Controller
       $gig->image = $filename;
     }
 
-    $gig->name = $request->input('bandName');
+    $gig->bandName = $request->input('bandName');
     $gig->genre = $request->input('genre');
     $gig->location = $request->input('location');
     $gig->dateTime = $request->input('dateTime');
@@ -178,7 +178,7 @@ class GigController extends Controller
     public function destroy($id)
     {
       $gig = Gig::findOrFail($id);
-      Storage::delete("public/covers/{$book->cover}");
+      Storage::delete("public/covers/{$gig->image}");
       $gig->delete();
 
       return redirect()->route('admin.gigs.index');

@@ -81,7 +81,7 @@ class GigController extends Controller
       $gig->image = $filename;
     }
 
-    $gig->name = $request->input('bandName');
+    $gig->bandName = $request->input('bandName');
     $gig->genre = $request->input('genre');
     $gig->location = $request->input('location');
     $gig->dateTime = $request->input('dateTime');

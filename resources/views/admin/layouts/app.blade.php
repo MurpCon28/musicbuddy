@@ -27,7 +27,7 @@
           </a> --}}
           <a class="navbar-brand" href="{{ url('/home') }}">
             <div class="logo-image">
-             <img src="/logo/musicbuddylogoforsite.png" class="img-fluid">
+             <img src="{{ asset('logo/musicbuddylogoforsite.png')}}" class="logo img-fluid">
            </div>
           </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,11 +37,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="{{ route('admin.uploads.index') }}">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="{{ route('admin.uploads.index') }}"><h5>Home</h5></a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Lessons
+                  <h5>Lessons</h5>
                 </a>
                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">Guitar</a>
@@ -50,13 +50,13 @@
                 </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Covers</a>
+                  <a class="nav-link" href="#"><h5>Covers</h5></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Reviews</a>
+                  <a class="nav-link" href="#"><h5>Reviews</h5></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('admin.gigs.index') }}">Gigs</a>
+                  <a class="nav-link" href="{{ route('admin.gigs.index') }}"><h5>Gigs</h5></a>
                 </li>
               </ul>
               <ul class="navbar-nav ml-auto">

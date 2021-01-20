@@ -37,14 +37,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('uploads') }}">All Videos</a>
+                  <a class="nav-link" href="home"><h5>Home</h5></a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Lessons
+                  <h5>Lessons</h5>
                 </a>
                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">Guitar</a>
@@ -52,11 +49,14 @@
                   <a class="dropdown-item" href="#">Piano</a>
                 </div>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('uploads') }}"><h5>Covers</h5></a>
+              </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Gigs</a>
+                  <a class="nav-link" href="#"><h5>Reviews</h5></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Reviews</a>
+                  <a class="nav-link" href="{{ route('user.gigs.index') }}"><h5>Gigs</h5></a>
                 </li>
               </ul>
               <ul class="navbar-nav ml-auto">
