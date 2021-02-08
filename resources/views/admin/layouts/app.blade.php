@@ -53,7 +53,7 @@
                   <a class="nav-link" href="#"><h5>Covers</h5></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"><h5>Reviews</h5></a>
+                  <a class="nav-link" href="{{ route('admin.reviews.index') }}"><h5>Reviews</h5></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('admin.gigs.index') }}"><h5>Gigs</h5></a>

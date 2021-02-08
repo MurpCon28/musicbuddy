@@ -49,6 +49,10 @@ Route::get('/admin/uploads/{id}/edit', [AdminUploadController::class, 'edit'])->
 Route::put('/admin/uploads/{id}', [AdminUploadController::class, 'update'])->name('admin.uploads.update');
 Route::delete('/admin/uploads/{id}', [AdminUploadController::class, 'destroy'])->name('admin.uploads.destroy');
 
+Route::get('/admin/reviews/', [AdminUploadController::class, 'index'])->name('admin.reviews.index');
+
+Route::get('/admin/myvid/', [AdminUploadController::class, 'index'])->name('admin.myvid.index');
+
 Route::get('/admin/uploads/{id}/comments/create', [AdminCommentController::class, 'create'])->name('admin.comments.create');
 Route::post('/admin/uploads/{id}/comments/', [AdminCommentController::class, 'store'])->name('admin.comments.store');
 Route::delete('/admin/uploads/{id}/comments/{rid}', [AdminCommentController::class, 'destroy'])->name('admin.comments.destroy');
