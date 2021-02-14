@@ -47,5 +47,19 @@ class UserSeeder extends Seeder
         $user->password = Hash::make('secret');
         $user->save();
         $user->roles()->attach($role_user);
+
+        $user = new User();
+        $user->name = 'Scott Bass';
+        $user->email = 'scott@musicbuddy.ie';
+        $user->password = Hash::make('secret');
+        $user->save();
+        $user->roles()->attach($role_user);
+
+        $user = new User();
+        $user->name = 'Jamie Harrison';
+        $user->email = 'jamie@musicbuddy.ie';
+        $user->password = Hash::make('secret');
+        $user->save();
+        $user->roles()->attach($role_user);
     }
 }

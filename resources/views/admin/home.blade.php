@@ -19,9 +19,9 @@
                     <br>
                     <h4>You are logged in as an admin.</h4>
                     <br>
-                    <a href="{{ route('admin.uploads.create') }}"> Upload Video </a>
-                    <br>
-                    <a href="{{ route('admin.myvid.index') }}"> View My Videos </a>
+                    <a href="{{ route('admin.uploads.create') }}" class="btn btn-primary"> Upload Video </a>
+                    <a href="{{ route('admin.myvid.index') }}" class="btn btn-primary"> View My Videos </a>
+                    <a href="{{ route('admin.myvid.index') }}" class="btn btn-primary"> View My Gigs </a>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
     <br>
     <br>
     <h2>My Videos</h2>
-    {{-- @if (count($uploads ?? '') == 0)
+    {{-- @if (count($uploads) == 0)
       <p>There are no uploads!</p>
     @else --}}
       @foreach (Auth::user()->uploads as $upload)

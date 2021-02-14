@@ -21,6 +21,8 @@ class UploadSeeder extends Seeder
       $oscarhancock = User::where('name', "Oscar Hancock")->first();
       $johnham = User::where('name', "John Ham")->first();
       $martyschwartz = User::where('name', "Marty Schwartz")->first();
+      $scottbass = User::where('name', "Scott Bass")->first();
+      $jamieharrison = User::where('name', "Jamie Harrison")->first();
 
       $lesson = Type::where('name', "Lesson")->first();
       $review = Type::where('name', "Review")->first();
@@ -67,6 +69,33 @@ class UploadSeeder extends Seeder
       $upload->tag_id = $rock->id;
       $upload->type_id = $review->id;
       $upload->user_id = $martyschwartz->id;
+      $upload->save();
+
+      $upload = new Upload();
+      $upload->video = "https://www.youtube.com/embed/W7KWZYNYpFs";
+      $upload->title = "Beginner Bass Lesson (Your Very First Steps)";
+      $upload->description = "There’s never been a better time to pick up a bass guitar. And in this video I’m going to talk you through everything you’ll need to get started, plus I show you that most difficult of first tasks ie. getting tuned up and staying there.";
+      $upload->tag_id = $jazzfunk->id;
+      $upload->type_id = $lesson->id;
+      $upload->user_id = $scottbass->id;
+      $upload->save();
+
+      $upload = new Upload();
+      $upload->video = "https://www.youtube.com/embed/zc071euiNQE";
+      $upload->title = "The Wind Cries Mary - Jimi Hendrix - by Jamie Harrison";
+      $upload->description = "This my version of 'The Wind Cries Mary' by Jimi Hendrix. It is fairly true to the original version for the first half of the song, with more of a swing groove, and then my own solo towards the end.";
+      $upload->tag_id = $rock->id;
+      $upload->type_id = $cover->id;
+      $upload->user_id = $jamieharrison->id;
+      $upload->save();
+
+      $upload = new Upload();
+      $upload->video = "https://www.youtube.com/embed/x_Okhq3Bnjc";
+      $upload->title = "Soundgarden - Jesus Christ Pose (guitar cover)";
+      $upload->description = "Line 6 Helix, Lexicon alpha, Adobe Audition, Wondershare Filmora";
+      $upload->tag_id = $rock->id;
+      $upload->type_id = $cover->id;
+      $upload->user_id = $johnham->id;
       $upload->save();
     }
 }

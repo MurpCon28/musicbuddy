@@ -20,6 +20,8 @@ class GigSeeder extends Seeder
       $oscarhancock = User::where('name', "Oscar Hancock")->first();
       $johnham = User::where('name', "John Ham")->first();
       $martyschwartz = User::where('name', "Marty Schwartz")->first();
+      $scottbass = User::where('name', "Scott Bass")->first();
+      $jamieharrison = User::where('name', "Jamie Harrison")->first();
 
       $antrim = County::where('name', "Antrim")->first();
       $armagh = County::where('name', "Armagh")->first();
@@ -85,6 +87,50 @@ class GigSeeder extends Seeder
       $gig->price = 15;
       $gig->county_id = $limerick->id;
       $gig->user_id = $conormurphy->id;
+      $gig->save();
+
+      $gig = new Gig();
+      $gig->image = "jamie-harrison.png";
+      $gig->bandName = "Jamie Harrison";
+      $gig->genre = "Rock";
+      $gig->location = "Sin é’";
+      $gig->dateTime = '2021-12-20 21:30:00';
+      $gig->price = 30;
+      $gig->county_id = $cork->id;
+      $gig->user_id = $jamieharrison->id;
+      $gig->save();
+
+      $gig = new Gig();
+      $gig->image = "manic.png";
+      $gig->bandName = "Manic";
+      $gig->genre = "Indie Rock";
+      $gig->location = "Roisin Dubh";
+      $gig->dateTime = '2021-08-15 20:00:00';
+      $gig->price = 25;
+      $gig->county_id = $galway->id;
+      $gig->user_id = $scottbass->id;
+      $gig->save();
+
+      $gig = new Gig();
+      $gig->image = "funk-bros.png";
+      $gig->bandName = "Funk Bros";
+      $gig->genre = "Jazz/Funk";
+      $gig->location = "O’Sullivan’s Courthouse";
+      $gig->dateTime = '2021-07-25 18:00:00';
+      $gig->price = 45;
+      $gig->county_id = $kerry->id;
+      $gig->user_id = $oscarhancock->id;
+      $gig->save();
+
+      $gig = new Gig();
+      $gig->image = "gojira.png";
+      $gig->bandName = "Gojira";
+      $gig->genre = "Metal";
+      $gig->location = "Cyprus Avenue";
+      $gig->dateTime = '2021-10-31 20:45:00';
+      $gig->price = 35;
+      $gig->county_id = $cork->id;
+      $gig->user_id = $johnham->id;
       $gig->save();
 
     }
