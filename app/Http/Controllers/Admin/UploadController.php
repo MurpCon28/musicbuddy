@@ -27,6 +27,10 @@ class UploadController extends Controller
     {
       $uploads = Upload::all();
       $reviews = Type::all();
+      // $orderasc = Upload::uploaddesc()->get();
+      // $orderdesc = Upload::uploadasc()->get();
+      $orderasc = Upload::orderBy('created_at', 'ASC')->get();
+      $orderdesc = Upload::orderBy('created_at', 'DESC')->get();
 
       return view('admin.uploads.index', [
         'uploads' => $uploads

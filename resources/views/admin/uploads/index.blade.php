@@ -2,6 +2,13 @@
 
 @section('content')
   <div class="container">
+    <select class="float-right form-select form-select-sm" aria-label=".form-select-sm example">
+      <option selected>Order By</option>
+      <option value="newest">Newest</option>
+      <option value="oldest">Oldest</option>
+    </select>
+    <br>
+    <br>
     <div class="row">
       <p id="alert-message" class="alert collapse"></p>
       <br>
@@ -16,7 +23,7 @@
             <div class="card data-id="{{ $upload->id }}"">
               <a href="{{ route('admin.uploads.show', $upload->id) }}">
               <div class="typeBanner">
-                <h5>{{ $upload->type->name }}</h5>
+                <h5 class="bannerFont">{{ $upload->type->name }}</h5>
               </div>
               <iframe width="560" height="315" src="{{ url($upload->video) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="card-body">

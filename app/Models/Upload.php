@@ -27,4 +27,14 @@ class Upload extends Model
     public function comments() {
       return $this->hasMany('App\Models\Comment');
     }
+
+    public function uploaddesc($query)
+    {
+            return $query->orderBy('created_at','DESC');
+    }
+
+    public function uploadasc($query)
+    {
+            return $query->orderBy('created_at','ASC');
+    }
 }

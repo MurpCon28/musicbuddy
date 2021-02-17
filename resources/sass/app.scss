@@ -12,25 +12,46 @@
 }
 
 .logo-image{
-   width: 100px;
+   width: 150px;
    height: 100px;
-   border-radius: 50%;
+   // border-radius: 50%;
    overflow: hidden;
-   margin-top: 12px;
+   margin-top: -15px;
+   margin-bottom: -15px;
    background-color: #3026e7;
+}
+
+.nav-logo-background-color {
+  // background-color: #3026e7;
+  margin-left: -10px;
+  padding-right: 15px;
 }
 
 .logo{
   height: 90px;
+  margin-left:10px;
 }
 
 .body{
   background-color: #f0f0f0;
 }
 
+.banner {
+  background-color: #2D1657;
+  color: #D2D2D3;
+}
+
 .typeBanner{
   background-color: #2D1657;
   color: #D2D2D3;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+.bannerFont {
+  margin-left:10px;
+  margin-top:4px;
+  font-weight: 600;
 }
 
 // .nav-item{

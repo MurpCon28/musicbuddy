@@ -5,8 +5,8 @@
     <div class="row">
       <div class="col-md-12 col-md-offset-2">
         <div class="card">
-          <div class="card-header">
-            Gig: {{ $gig->bandName }} <a href="https://www.ticketmaster.ie/" target="_blank" class="btn btn-info float-right">Tickets</a>
+          <div class="card-header banner">
+            <h5>Gig: {{ $gig->bandName }} <a href="https://www.ticketmaster.ie/" target="_blank" class="btn btn-primary float-right">Tickets</a></h5>
           </div>
 
                   <div class="col-md-6">

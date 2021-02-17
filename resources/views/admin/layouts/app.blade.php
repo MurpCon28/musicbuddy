@@ -25,11 +25,15 @@
           {{-- <a class="navbar-brand" href="{{ url('/') }}">
               {{ config('app.name', 'Laravel') }}
           </a> --}}
-          <a class="navbar-brand" href="{{ url('/home') }}">
-            <div class="logo-image">
-             <img src="{{ asset('logo/musicbuddylogoforsite.png')}}" class="logo img-fluid">
-           </div>
+          <div class="nav-logo-background-color">
+          <a class="navbar-brand nav-logo-background-color" href="{{ url('/home') }}">
+            {{-- <div class="nav-logo-background-color"> --}}
+              <div class="logo-image">
+               <img src="{{ asset('logo/musicbuddylogoforsite.png')}}" class="logo img-fluid">
+             </div>
+           {{-- </div> --}}
           </a>
+        </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
