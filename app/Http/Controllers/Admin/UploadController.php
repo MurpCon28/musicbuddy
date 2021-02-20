@@ -35,6 +35,11 @@ class UploadController extends Controller
       return view('admin.uploads.index', [
         'uploads' => $uploads
       ]);
+    }
+
+    public function myvid()
+    {
+      $uploads = Upload::all();
 
       return view('admin.myvid.index', [
         'uploads' => $uploads

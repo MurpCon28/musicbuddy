@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
   <div class="container">
@@ -15,7 +15,7 @@
 
           <div class="card-group">
             <div class="card data-id="{{ $upload->id }}"">
-              <a href="{{ route('admin.uploads.show', $upload->id) }}">
+              <a href="{{ route('user.uploads.show', $upload->id) }}">
               <div class="typeBanner">
                 {{ $upload->type->name }}
               </div>
@@ -30,7 +30,7 @@
             </div>
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Comments <a href="{{ route('admin.comments.create', $upload->id) }}" class="btn btn-primary float-right">Add</a></h5>
+                <h5 class="card-title">Comments <a href="{{ route('user.comments.create', $upload->id) }}" class="btn btn-primary float-right">Add</a></h5>
                 <ul>
                   @if (count($upload->comments) == 0)
                     <p>There are no comments for this video.</p>

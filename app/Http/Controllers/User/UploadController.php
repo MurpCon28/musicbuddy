@@ -32,6 +32,15 @@ class UploadController extends Controller
       ]);
     }
 
+    public function myvid()
+    {
+      $uploads = Upload::all();
+
+      return view('user.myvid.index', [
+        'uploads' => $uploads
+      ]);
+    }
+
     public function reviews()
     {
       $uploads = Upload::all();

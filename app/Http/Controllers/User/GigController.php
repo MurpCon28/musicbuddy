@@ -31,10 +31,29 @@ class GigController extends Controller
     public function index()
     {
       $gigs = Gig::all();
+
       return view('user.gigs.index', [
         'gigs' => $gigs
       ]);
     }
+
+    public function mygig()
+    {
+      $gigs = Gig::all();
+
+      return view('user.mygig.index', [
+        'gigs' => $gigs
+      ]);
+    }
+
+    // public function gigshow($id)
+    // {
+    //   $gig = Gig::findOrFail($id);
+    //
+    //   return view('user.gigs.show', [
+    //   'gig' => $gig
+    //   ]);
+    // }
 
     /**
      * Show the form for creating a new resource.
