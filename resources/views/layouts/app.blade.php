@@ -25,11 +25,15 @@
           {{-- <a class="navbar-brand" href="{{ url('/') }}">
               {{ config('app.name', 'Laravel') }}
           </a> --}}
-          <a class="navbar-brand" href="{{ url('/home') }}">
-            <div class="logo-image">
-             <img src="/logo/musicbuddylogoforsite.png" class="img-fluid">
-           </div>
-          </a>
+          <div class="nav-logo-background-color">
+            <a class="navbar-brand nav-logo-background-color" href="{{ url('/home') }}">
+              {{-- <div class="nav-logo-background-color"> --}}
+                <div class="logo-image">
+                 <img src="{{ asset('logo/musicbuddylogoforsite.png')}}" class="logo img-fluid">
+               </div>
+             {{-- </div> --}}
+            </a>
+          </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,25 +43,28 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="home"><h5>Home</h5></a>
                 </li>
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <h5>Lessons</h5>
                 </a>
                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Guitar</a>
-                  <a class="dropdown-item" href="#">Bass</a>
-                  <a class="dropdown-item" href="#">Piano</a>
+                   <a class="dropdown-item" href="{{ route('user.lessons.index') }}">All Lessons</a>
+                   <a class="dropdown-item" href="#">Guitar</a>
+                   <a class="dropdown-item" href="#">Bass</a>
                 </div>
+              </li> --}}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('user.lessons.index') }}"><h5>Lessons</h5></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ route('uploads') }}"><h5>Covers</h5></a>
+                <a class="nav-link" href="{{ route('user.covers.index') }}"><h5>Covers</h5></a>
               </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#"><h5>Reviews</h5></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('user.gigs.index') }}"><h5>Gigs</h5></a>
-                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('user.reviews.index') }}"><h5>Reviews</h5></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('user.gigs.index') }}"><h5>Gigs</h5></a>
+              </li>
               </ul>
               <ul class="navbar-nav ml-auto">
                 <form class="form-inline my-2 my-lg-0">

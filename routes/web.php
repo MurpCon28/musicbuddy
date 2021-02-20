@@ -49,9 +49,21 @@ Route::get('/admin/uploads/{id}/edit', [AdminUploadController::class, 'edit'])->
 Route::put('/admin/uploads/{id}', [AdminUploadController::class, 'update'])->name('admin.uploads.update');
 Route::delete('/admin/uploads/{id}', [AdminUploadController::class, 'destroy'])->name('admin.uploads.destroy');
 
-Route::get('/admin/reviews/', [AdminUploadController::class, 'index'])->name('admin.reviews.index');
+Route::get('/admin/reviews/', [AdminUploadController::class, 'reviews'])->name('admin.reviews.index');
+Route::get('/admin/reviews/{id}', [AdminUploadController::class, 'reviewshow'])->name('admin.reviews.show');
+Route::get('/admin/covers/', [AdminUploadController::class, 'covers'])->name('admin.covers.index');
+Route::get('/admin/covers/{id}', [AdminUploadController::class, 'covershow'])->name('admin.covers.show');
+Route::get('/admin/lessons/', [AdminUploadController::class, 'lessons'])->name('admin.lessons.index');
+Route::get('/admin/lessons/{id}', [AdminUploadController::class, 'lessonshow'])->name('admin.lessons.show');
 
-Route::get('/admin/myvid/', [AdminUploadController::class, 'index'])->name('admin.myvid.index');
+Route::get('/user/reviews/', [UserUploadController::class, 'reviews'])->name('user.reviews.index');
+Route::get('/user/reviews/{id}', [UserUploadController::class, 'reviewshow'])->name('user.reviews.show');
+Route::get('/user/covers/', [UserUploadController::class, 'covers'])->name('user.covers.index');
+Route::get('/user/covers/{id}', [UserUploadController::class, 'covershow'])->name('user.covers.show');
+Route::get('/user/lessons/', [UserUploadController::class, 'lessons'])->name('user.lessons.index');
+Route::get('/user/lessons/{id}', [UserUploadController::class, 'lessonshow'])->name('user.lessons.show');
+
+Route::get('/admin/myvid/', [AdminUploadController::class, 'myvid'])->name('admin.myvid.index');
 
 Route::get('/admin/uploads/{id}/comments/create', [AdminCommentController::class, 'create'])->name('admin.comments.create');
 Route::post('/admin/uploads/{id}/comments/', [AdminCommentController::class, 'store'])->name('admin.comments.store');

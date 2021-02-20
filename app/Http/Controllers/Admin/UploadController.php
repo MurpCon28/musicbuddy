@@ -39,9 +39,65 @@ class UploadController extends Controller
       return view('admin.myvid.index', [
         'uploads' => $uploads
       ]);
+    }
+
+    public function reviews()
+    {
+      $uploads = Upload::all();
+      $reviews = Type::where('name', 'review')->first();
 
       return view('admin.reviews.index', [
-        'reviews' => $reviews
+        'reviews' => $reviews,
+        'uploads' => $uploads
+      ]);
+    }
+
+    public function reviewshow($id)
+    {
+      $upload = Upload::findOrFail($id);
+
+      return view('admin.reviews.show', [
+        'upload' => $upload
+      ]);
+    }
+
+    public function covers()
+    {
+      $uploads = Upload::all();
+      $covers = Type::where('name', 'cover')->first();
+
+      return view('admin.covers.index', [
+        'covers' => $covers,
+        'uploads' => $uploads
+      ]);
+    }
+
+    public function covershow($id)
+    {
+      $upload = Upload::findOrFail($id);
+
+      return view('admin.covers.show', [
+        'upload' => $upload
+      ]);
+    }
+
+    public function lessons()
+    {
+      $uploads = Upload::all();
+      $covers = Type::where('name', 'lesson')->first();
+
+      return view('admin.lessons.index', [
+        'covers' => $covers,
+        'uploads' => $uploads
+      ]);
+    }
+
+    public function lessonshow($id)
+    {
+      $upload = Upload::findOrFail($id);
+
+      return view('admin.lessons.show', [
+        'upload' => $upload
       ]);
     }
 

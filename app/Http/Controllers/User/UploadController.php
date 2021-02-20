@@ -32,6 +32,66 @@ class UploadController extends Controller
       ]);
     }
 
+    public function reviews()
+    {
+      $uploads = Upload::all();
+      $reviews = Type::where('name', 'review')->first();
+
+      return view('user.reviews.index', [
+        'reviews' => $reviews,
+        'uploads' => $uploads
+      ]);
+    }
+
+    public function reviewshow($id)
+    {
+      $upload = Upload::findOrFail($id);
+
+      return view('user.reviews.show', [
+        'upload' => $upload
+      ]);
+    }
+
+    public function covers()
+    {
+      $uploads = Upload::all();
+      $covers = Type::where('name', 'cover')->first();
+
+      return view('user.covers.index', [
+        'covers' => $covers,
+        'uploads' => $uploads
+      ]);
+    }
+
+    public function covershow($id)
+    {
+      $upload = Upload::findOrFail($id);
+
+      return view('user.covers.show', [
+        'upload' => $upload
+      ]);
+    }
+
+    public function lessons()
+    {
+      $uploads = Upload::all();
+      $covers = Type::where('name', 'lesson')->first();
+
+      return view('user.lessons.index', [
+        'covers' => $covers,
+        'uploads' => $uploads
+      ]);
+    }
+
+    public function lessonshow($id)
+    {
+      $upload = Upload::findOrFail($id);
+
+      return view('user.lessons.show', [
+        'upload' => $upload
+      ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

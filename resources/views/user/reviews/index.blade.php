@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
   <div class="container">
@@ -12,7 +12,7 @@
 
             <div class="card-group">
               <div class="card data-id="{{ $upload->id }}"">
-                <a href="{{ route('admin.reviews.show', $upload->id) }}">
+                <a href="{{ route('user.reviews.show', $upload->id) }}">
                 <div class="typeBanner">
                   <h5 class="bannerFont">{{ $upload->type->name }}</h5>
                 </div>

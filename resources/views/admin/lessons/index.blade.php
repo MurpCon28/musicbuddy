@@ -7,12 +7,12 @@
       <br>
       <br>
 
-      @forelse($reviews->uploads as $upload)
+      @forelse($covers->uploads as $upload)
         <div class="col-md-12">
 
             <div class="card-group">
               <div class="card data-id="{{ $upload->id }}"">
-                <a href="{{ route('admin.reviews.show', $upload->id) }}">
+                <a href="{{ route('admin.lessons.show', $upload->id) }}">
                 <div class="typeBanner">
                   <h5 class="bannerFont">{{ $upload->type->name }}</h5>
                 </div>

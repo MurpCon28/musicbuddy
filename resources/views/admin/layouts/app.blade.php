@@ -26,35 +26,38 @@
               {{ config('app.name', 'Laravel') }}
           </a> --}}
           <div class="nav-logo-background-color">
-          <a class="navbar-brand nav-logo-background-color" href="{{ url('/home') }}">
-            {{-- <div class="nav-logo-background-color"> --}}
-              <div class="logo-image">
-               <img src="{{ asset('logo/musicbuddylogoforsite.png')}}" class="logo img-fluid">
-             </div>
-           {{-- </div> --}}
-          </a>
-        </div>
+            <a class="navbar-brand nav-logo-background-color" href="{{ url('/home') }}">
+              {{-- <div class="nav-logo-background-color"> --}}
+                <div class="logo-image">
+                 <img src="{{ asset('logo/musicbuddylogoforsite.png')}}" class="logo img-fluid">
+               </div>
+             {{-- </div> --}}
+            </a>
+          </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                   <a class="nav-link" href="{{ route('admin.uploads.index') }}"><h5>Home</h5></a>
                 </li>
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <h5>Lessons</h5>
+                  <h5 >Lessons</h5>
                 </a>
                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ route('admin.lessons.index') }}">All Lessons</a>
                   <a class="dropdown-item" href="#">Guitar</a>
                   <a class="dropdown-item" href="#">Bass</a>
-                  <a class="dropdown-item" href="#">Piano</a>
                 </div>
+                </li> --}}
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('admin.lessons.index') }}"><h5>Lessons</h5></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"><h5>Covers</h5></a>
+                  <a class="nav-link" href="{{ route('admin.covers.index') }}"><h5>Covers</h5></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('admin.reviews.index') }}"><h5>Reviews</h5></a>
