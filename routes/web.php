@@ -67,6 +67,7 @@ Route::get('/admin/myvid/', [AdminUploadController::class, 'myvid'])->name('admi
 Route::get('/admin/mygig/', [AdminGigController::class, 'mygig'])->name('admin.mygig.index');
 
 Route::get('/user/myvid/', [UserUploadController::class, 'myvid'])->name('user.myvid.index');
+Route::get('/user/mygig/', [UserGigController::class, 'mygig'])->name('user.mygig.index');
 
 Route::get('/admin/uploads/{id}/comments/create', [AdminCommentController::class, 'create'])->name('admin.comments.create');
 Route::post('/admin/uploads/{id}/comments/', [AdminCommentController::class, 'store'])->name('admin.comments.store');

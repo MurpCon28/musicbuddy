@@ -7,7 +7,8 @@
       <br>
       <br>
       <h2>My Videos</h2>
-      @if (count($uploads) == 0)
+      @if (count(Auth::user()->uploads) == 0)
+        <br>
         <p>There are no uploads!</p>
       @else
         @foreach (Auth::user()->uploads as $upload)

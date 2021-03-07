@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
   <div class="container">
@@ -12,7 +12,7 @@
             <div class="card">
               <div class="card-header banner">
                 <h5>Gigs
-                <a href="{{ route('admin.gigs.create') }}" class="btn btn-primary float-right">Add</a>
+                <a href="{{ route('user.gigs.create') }}" class="btn btn-primary float-right">Add</a>
               </h5>
               </div>
               <br>
