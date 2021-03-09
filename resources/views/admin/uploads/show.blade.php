@@ -18,12 +18,28 @@
                       <p class="card-text"><small class="text-muted">{{ $upload->user->name }}</small></p>
                       <p class="card-text"><small class="text-muted">{{ $upload->tag->name }}</small></p>
                     <a href="{{ route('admin.uploads.index') }}" class="btn btn-default">Back</a>
+
+                    @if (App\Models\Favourite::where('upload_id', '=', $upload->id)->exists())
+                      <form style="display:inline-block" method="POST" action="{{ route('admin.favourites.destroy', $upload->id) }}">
+                        <button type="submit" class="btn btn-danger pull-right">Remove from Favourites</button>
+                        <input type="hidden" value="DELETE" name="_method">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      </form>
+
+                    @else
+                      <form style="display:inline-block" method="POST" action="{{ route('admin.favourites.store', $upload->id) }}">
+                        <button type="submit" class="btn btn-primary pull-right">Add to Favourites</button>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      </form>
+                    @endif
+
                     <a href="{{ route('admin.uploads.edit', $upload->id) }}" class="btn btn-warning">Edit</a>
                     <form style="display:inline-block" method="POST" action="{{ route('admin.uploads.destroy', $upload->id) }}">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <button type="submit" class="form-control btn btn-danger">Delete</a>
                   </form>
+
                   </div>
                   <br>
               </div>

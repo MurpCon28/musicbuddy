@@ -20,6 +20,7 @@
                     <h4>You are logged in as an admin.</h4>
                     <br>
                     <a href="{{ route('admin.uploads.create') }}" class="btn btn-primary"> Upload Video </a>
+                    <a href="{{ route('admin.favourites.index') }}" class="btn btn-primary"> View My Favourites Videos </a>
                     <a href="{{ route('admin.myvid.index') }}" class="btn btn-primary"> View My Videos </a>
                     <a href="{{ route('admin.mygig.index') }}" class="btn btn-primary"> View My Gigs </a>
                 </div>

@@ -12,6 +12,9 @@ use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\User\CommentController as UserCommentController;
 use App\Http\Controllers\Admin\CommentController as AdminCommentController;
 
+use App\Http\Controllers\User\FavouriteController as UserFavouriteController;
+use App\Http\Controllers\Admin\FavouriteController as AdminFavouriteController;
+
 use App\Http\Controllers\User\GigController as UserGigController;
 use App\Http\Controllers\Admin\GigController as AdminGigController;
 
@@ -68,6 +71,14 @@ Route::get('/admin/mygig/', [AdminGigController::class, 'mygig'])->name('admin.m
 
 Route::get('/user/myvid/', [UserUploadController::class, 'myvid'])->name('user.myvid.index');
 Route::get('/user/mygig/', [UserGigController::class, 'mygig'])->name('user.mygig.index');
+
+Route::get('/admin/favourites/', [AdminFavouriteController::class, 'index'])->name('admin.favourites.index');
+Route::post('/admin/uploads/{id}/favourites/', [AdminFavouriteController::class, 'store'])->name('admin.favourites.store');
+Route::delete('/admin/favoutites/{id}', [AdminFavouriteController::class, 'destroy'])->name('admin.favourites.destroy');
+
+Route::get('/user/favourites/', [UserFavouriteController::class, 'index'])->name('user.favourites.index');
+Route::post('/user/uploads/{id}/favourites/', [UserFavouriteController::class, 'store'])->name('user.favourites.store');
+Route::delete('/user/favoutites/{id}', [UserFavouriteController::class, 'destroy'])->name('user.favourites.destroy');
 
 Route::get('/admin/uploads/{id}/comments/create', [AdminCommentController::class, 'create'])->name('admin.comments.create');
 Route::post('/admin/uploads/{id}/comments/', [AdminCommentController::class, 'store'])->name('admin.comments.store');

@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
       $this->call(CommentSeeder::class);
       $this->call(CountySeeder::class);
       $this->call(GigSeeder::class);
+      $this->call(FavouriteSeeder::class);
     }
 }

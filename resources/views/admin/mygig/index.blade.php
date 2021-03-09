@@ -17,7 +17,9 @@
               </div>
               <br>
               @if (count(Auth::user()->gigs) === 0)
-                <p>There are no gigs available!</p>
+                <div class="col-md-12">
+                  <p>There are no uploads!</p>
+                </div>
               @else
                 <div class="card-group col-12">
                   @foreach (Auth::user()->gigs as $gig)

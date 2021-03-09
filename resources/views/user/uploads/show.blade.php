@@ -18,6 +18,20 @@
                       <p class="card-text"><small class="text-muted">{{ $upload->user->name }}</small></p>
                       <p class="card-text"><small class="text-muted">{{ $upload->tag->name }}</small></p>
                     <a href="{{ route('user.uploads.index') }}" class="btn btn-default">Back</a>
+
+                    @if (App\Models\Favourite::where('upload_id', '=', $upload->id)->exists())
+                      <form style="display:inline-block" method="POST" action="{{ route('admin.favourites.destroy', $upload->id) }}">
+                        <button type="submit" class="btn btn-danger pull-right">Remove from Favourites</button>
+                        <input type="hidden" value="DELETE" name="_method">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      </form>
+
+                    @else
+                      <form style="display:inline-block" method="POST" action="{{ route('admin.favourites.store', $upload->id) }}">
+                        <button type="submit" class="btn btn-primary pull-right">Add to Favourites</button>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      </form>
+                    @endif
                   </div>
                   <br>
               </div>
