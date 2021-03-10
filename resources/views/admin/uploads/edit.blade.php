@@ -23,7 +23,7 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="_method" value="PUT">
                 <div class="form-group">
-                  <label for="video">Video (url link from embed video from iframe)</label>
+                  <label for="video">Video (embed video from iframe "https://www.youtube.com/embed/E3NC88xGQ_A")</label>
                   <input type="text" class="form-control" id="video" name="video" value="{{ old('video', $upload->video) }}">
                 </div>
                 <div class="form-group">

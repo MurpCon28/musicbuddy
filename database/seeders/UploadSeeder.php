@@ -23,6 +23,9 @@ class UploadSeeder extends Seeder
       $martyschwartz = User::where('name', "Marty Schwartz")->first();
       $scottbass = User::where('name', "Scott Bass")->first();
       $jamieharrison = User::where('name', "Jamie Harrison")->first();
+      $jimdunlop = User::where('name', "Jim Dunlop")->first();
+      $simabustami = User::where('name', "Sima Bustami")->first();
+      $simonhimsworth = User::where('name', "Simon Himsworth")->first();
 
       $lesson = Type::where('name', "Lesson")->first();
       $review = Type::where('name', "Review")->first();
@@ -96,6 +99,69 @@ class UploadSeeder extends Seeder
       $upload->tag_id = $rock->id;
       $upload->type_id = $cover->id;
       $upload->user_id = $johnham->id;
+      $upload->save();
+
+      $upload = new Upload();
+      $upload->video = "https://www.youtube.com/embed/E3NC88xGQ_A";
+      $upload->title = "Tom Morello Cry Baby Wah - TBM95";
+      $upload->description = "Express your own vision in solidarity with one of music's great freedom fighters with the Tom Morello Cry Baby Wah.";
+      $upload->tag_id = $rock->id;
+      $upload->type_id = $review->id;
+      $upload->user_id = $jimdunlop->id;
+      $upload->save();
+
+      $upload = new Upload();
+      $upload->video = "https://www.youtube.com/embed/7NKzdgnIGrs";
+      $upload->title = "Tom Morello Cry Baby Wah - TBM95";
+      $upload->description = "My cover of Cherub Rock by Smashing Pumpkins.";
+      $upload->tag_id = $rock->id;
+      $upload->type_id = $cover->id;
+      $upload->user_id = $simabustami->id;
+      $upload->save();
+
+      $upload = new Upload();
+      $upload->video = "https://www.youtube.com/embed/jMQw4fXZztw";
+      $upload->title = "Paranoid Android - Radiohead (Lockdown v2.0 Cover)";
+      $upload->description = "Cover of Paranoid Android by Radiohead - Lockdown v2.0";
+      $upload->tag_id = $acousticguitar->id;
+      $upload->type_id = $cover->id;
+      $upload->user_id = $simonhimsworth->id;
+      $upload->save();
+
+      $upload = new Upload();
+      $upload->video = "https://www.youtube.com/embed/osbnob9ih-c";
+      $upload->title = "Billy Corgan's First Look at the Op Amp Big Muff from Electro-Harmonix | Reverb Interview";
+      $upload->description = "Smashing Pumpkins frontman Billy Corgan reflects on his first experience with the Electro-Harmonix Big Muff, and how he used the legendary fuzz to shape the sound of the Pumpkin's famed Siamese Dream.";
+      $upload->tag_id = $electricguitar->id;
+      $upload->type_id = $review->id;
+      $upload->user_id = $conormurphy->id;
+      $upload->save();
+
+      $upload = new Upload();
+      $upload->video = "https://www.youtube.com/embed/jLoPmrHHHJE";
+      $upload->title = "Blues Bass Lines: 6 Authentic Formulas That Work Every Time";
+      $upload->description = "If you want to play some 12-bar blues, on bass, you’re going to need to know how to get through the form using authentic sounding blues bass lines.";
+      $upload->tag_id = $blues->id;
+      $upload->type_id = $lesson->id;
+      $upload->user_id = $scottbass->id;
+      $upload->save();
+
+      $upload = new Upload();
+      $upload->video = "https://www.youtube.com/embed/2VbqiCoSTGY";
+      $upload->title = "JAZZ BASS GROOVES - Recording Jayme Lewis";
+      $upload->description = "Jazz Bass Groove";
+      $upload->tag_id = $jazzfunk->id;
+      $upload->type_id = $cover->id;
+      $upload->user_id = $jimdunlop->id;
+      $upload->save();
+
+      $upload = new Upload();
+      $upload->video = "https://www.youtube.com/embed/OJHfMLnFQ9s";
+      $upload->title = "Boss DS-1 Distortion | Reverb Demo Video";
+      $upload->description = "The Boss DS-1 Distortion pedal is a classic used by pros everywhere on both guitar and keyboard. The DS-1 comes with just 3 simple dials, so you can step on, turn up and find your tone with ease.";
+      $upload->tag_id = $rock->id;
+      $upload->type_id = $review->id;
+      $upload->user_id = $conormurphy->id;
       $upload->save();
     }
 }

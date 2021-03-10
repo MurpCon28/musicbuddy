@@ -22,6 +22,9 @@ class GigSeeder extends Seeder
       $martyschwartz = User::where('name', "Marty Schwartz")->first();
       $scottbass = User::where('name', "Scott Bass")->first();
       $jamieharrison = User::where('name', "Jamie Harrison")->first();
+      $jimdunlop = User::where('name', "Jim Dunlop")->first();
+      $simabustami = User::where('name', "Sima Bustami")->first();
+      $simonhimsworth = User::where('name', "Simon Himsworth")->first();
 
       $antrim = County::where('name', "Antrim")->first();
       $armagh = County::where('name', "Armagh")->first();
