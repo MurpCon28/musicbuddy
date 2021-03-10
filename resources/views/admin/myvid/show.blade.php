@@ -17,7 +17,7 @@
                       <p class="card-text">{{ $upload->description }}</p>
                       <p class="card-text"><small class="text-muted">{{ $upload->user->name }}</small></p>
                       <p class="card-text"><small class="text-muted">{{ $upload->tag->name }}</small></p>
-                    <a href="{{ route('admin.uploads.index') }}" class="btn btn-default">Back</a>
+                    <a href="{{ route('admin.myvid.index') }}" class="btn btn-default">Back</a>
 
                     @if (App\Models\Favourite::where('upload_id', '=', $upload->id)->exists())
                       <form style="display:inline-block" method="POST" action="{{ route('admin.favourites.destroy', $upload->id) }}">
@@ -32,13 +32,13 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       </form>
                     @endif
-                    
+
+                    <a href="{{ route('admin.uploads.edit', $upload->id) }}" class="btn btn-warning">Edit</a>
                     <form style="display:inline-block" method="POST" action="{{ route('admin.uploads.destroy', $upload->id) }}">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <button type="submit" class="form-control btn btn-danger">Delete</a>
                   </form>
-
                   </div>
                   <br>
               </div>
@@ -59,20 +59,12 @@
                     <thead>
                         <th>Comment</th>
                         <th>User</th>
-                        <th>Actions</th>
                     </thead>
                     <tbody>
                         @foreach ($upload->comments as $comment)
                         <tr>
                             <th>{{ $comment->body }}</th>
                             <th>{{ $comment->user->name }}</th>
-                            <th>
-                                <form style="display:inline-block" method="POST" action="{{ route('admin.comments.destroy', [ 'id' => $upload->id, 'rid' => $comment->id]) }}">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <button type="submit" class="form-control btn btn-danger">Delete</a>
-                                </form>
-                            </th>
                         </tr>
                         @endforeach
                     </tbody>

@@ -24,7 +24,7 @@
                 <div class="card-group col-12">
                   @foreach (Auth::user()->gigs as $gig)
                     <div class="card-mb-12 data-id="{{ $gig->id }}"" style="max-width: 1040px;">
-                      <a href="{{ route('admin.gigs.show', $gig->id) }}">
+                      <a href="{{ route('user.mygig.show', $gig->id) }}">
                         <div class="col-md-4">
                           <img src="{{ asset('storage/images/' . $gig->image) }}" width="300" />
                         </div>

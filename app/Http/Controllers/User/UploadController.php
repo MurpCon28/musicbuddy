@@ -41,6 +41,15 @@ class UploadController extends Controller
       ]);
     }
 
+    public function myvidshow($id)
+    {
+      $upload = Upload::findOrFail($id);
+
+      return view('user.myvid.show', [
+        'upload' => $upload
+      ]);
+    }
+
     public function reviews()
     {
       $uploads = Upload::all();
@@ -226,6 +235,11 @@ class UploadController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $upload = Upload::findOrFail($id);
+      $upload->delete();
+
+      // $request->session()->flash('danger', 'Video deleted successfuly');
+
+      return redirect()->route('user.uploads.index');
     }
 }

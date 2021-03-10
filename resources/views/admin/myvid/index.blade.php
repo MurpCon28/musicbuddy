@@ -18,7 +18,7 @@
 
           <div class="card-group">
             <div class="card data-id="{{ $upload->id }}"">
-              <a href="{{ route('admin.uploads.show', $upload->id) }}">
+              <a href="{{ route('admin.myvid.show', $upload->id) }}">
               <div class="typeBanner">
                 {{ $upload->type->name }}
               </div>

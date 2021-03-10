@@ -46,6 +46,15 @@ class UploadController extends Controller
       ]);
     }
 
+    public function myvidshow($id)
+    {
+      $upload = Upload::findOrFail($id);
+
+      return view('admin.myvid.show', [
+        'upload' => $upload
+      ]);
+    }
+
     public function reviews()
     {
       $uploads = Upload::all();

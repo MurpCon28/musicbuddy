@@ -43,6 +43,10 @@ Route::get('/user/home', [UserHomeController::class, 'index'])->name('user.home'
 Route::get('/user/uploads/', [UserUploadController::class, 'index'])->name('user.uploads.index');
 Route::get('/user/uploads/create', [UserUploadController::class, 'create'])->name('user.uploads.create');
 Route::get('/user/uploads/{id}', [UserUploadController::class, 'show'])->name('user.uploads.show');
+Route::post('/user/uploads/store', [UserUploadController::class, 'store'])->name('user.uploads.store');
+Route::get('/user/uploads/{id}/edit', [UserUploadController::class, 'edit'])->name('user.uploads.edit');
+Route::put('/user/uploads/{id}', [UserUploadController::class, 'update'])->name('user.uploads.update');
+Route::delete('/user/uploads/{id}', [UserUploadController::class, 'destroy'])->name('user.uploads.destroy');
 
 Route::get('/admin/uploads/', [AdminUploadController::class, 'index'])->name('admin.uploads.index');
 Route::get('/admin/uploads/create', [AdminUploadController::class, 'create'])->name('admin.uploads.create');
@@ -67,10 +71,14 @@ Route::get('/user/lessons/', [UserUploadController::class, 'lessons'])->name('us
 Route::get('/user/lessons/{id}', [UserUploadController::class, 'lessonshow'])->name('user.lessons.show');
 
 Route::get('/admin/myvid/', [AdminUploadController::class, 'myvid'])->name('admin.myvid.index');
+Route::get('/admin/myvid/{id}', [AdminUploadController::class, 'myvidshow'])->name('admin.myvid.show');
 Route::get('/admin/mygig/', [AdminGigController::class, 'mygig'])->name('admin.mygig.index');
+Route::get('/admin/mygig/{id}', [AdminGigController::class, 'mygigshow'])->name('admin.mygig.show');
 
 Route::get('/user/myvid/', [UserUploadController::class, 'myvid'])->name('user.myvid.index');
+Route::get('/user/myvid/{id}', [UserUploadController::class, 'myvidshow'])->name('user.myvid.show');
 Route::get('/user/mygig/', [UserGigController::class, 'mygig'])->name('user.mygig.index');
+Route::get('/user/mygig/{id}', [UserGigController::class, 'mygigshow'])->name('user.mygig.show');
 
 Route::get('/admin/favourites/', [AdminFavouriteController::class, 'index'])->name('admin.favourites.index');
 Route::post('/admin/uploads/{id}/favourites/', [AdminFavouriteController::class, 'store'])->name('admin.favourites.store');
@@ -91,6 +99,9 @@ Route::get('/user/gigs/', [UserGigController::class, 'index'])->name('user.gigs.
 Route::get('/user/gigs/{id}', [UserGigController::class, 'show'])->name('user.gigs.show');
 Route::get('/user/gigs.create', [UserGigController::class, 'create'])->name('user.gigs.create');
 Route::post('/user/gigs/store', [UserGigController::class, 'store'])->name('user.gigs.store');
+Route::get('/user/gigs/{id}/edit', [UserGigController::class, 'edit'])->name('user.gigs.edit');
+Route::put('/user/gigs/{id}', [UserGigController::class, 'update'])->name('user.gigs.update');
+Route::delete('/user/gigs/{id}', [UserGigController::class, 'destroy'])->name('user.gigs.destroy');
 
 Route::get('/admin/gigs', [AdminGigController::class, 'index'])->name('admin.gigs.index');
 Route::get('/admin/gigs.create', [AdminGigController::class, 'create'])->name('admin.gigs.create');

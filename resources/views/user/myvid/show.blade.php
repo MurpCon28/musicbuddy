@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
   <div class="container">
@@ -17,28 +17,28 @@
                       <p class="card-text">{{ $upload->description }}</p>
                       <p class="card-text"><small class="text-muted">{{ $upload->user->name }}</small></p>
                       <p class="card-text"><small class="text-muted">{{ $upload->tag->name }}</small></p>
-                    <a href="{{ route('admin.uploads.index') }}" class="btn btn-default">Back</a>
+                    <a href="{{ route('user.myvid.index') }}" class="btn btn-default">Back</a>
 
                     @if (App\Models\Favourite::where('upload_id', '=', $upload->id)->exists())
-                      <form style="display:inline-block" method="POST" action="{{ route('admin.favourites.destroy', $upload->id) }}">
+                      <form style="display:inline-block" method="POST" action="{{ route('user.favourites.destroy', $upload->id) }}">
                         <button type="submit" class="btn btn-danger pull-right">Remove from Favourites</button>
                         <input type="hidden" value="DELETE" name="_method">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       </form>
 
                     @else
-                      <form style="display:inline-block" method="POST" action="{{ route('admin.favourites.store', $upload->id) }}">
+                      <form style="display:inline-block" method="POST" action="{{ route('user.favourites.store', $upload->id) }}">
                         <button type="submit" class="btn btn-primary pull-right">Add to Favourites</button>
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       </form>
                     @endif
-                    
-                    <form style="display:inline-block" method="POST" action="{{ route('admin.uploads.destroy', $upload->id) }}">
+
+                    <a href="{{ route('user.uploads.edit', $upload->id) }}" class="btn btn-warning">Edit</a>
+                    <form style="display:inline-block" method="POST" action="{{ route('user.uploads.destroy', $upload->id) }}">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <button type="submit" class="form-control btn btn-danger">Delete</a>
                   </form>
-
                   </div>
                   <br>
               </div>
@@ -49,7 +49,7 @@
               <div class="card">
                 <div class="card-header">
                   Comments
-                  <a href="{{ route('admin.comments.create', $upload->id) }}" class="btn btn-primary float-right">Add</a>
+                  <a href="{{ route('user.comments.create', $upload->id) }}" class="btn btn-primary float-right">Add</a>
                 </div>
               <div class="card-body">
                 @if (count($upload->comments) == 0)
@@ -59,20 +59,12 @@
                     <thead>
                         <th>Comment</th>
                         <th>User</th>
-                        <th>Actions</th>
                     </thead>
                     <tbody>
                         @foreach ($upload->comments as $comment)
                         <tr>
                             <th>{{ $comment->body }}</th>
                             <th>{{ $comment->user->name }}</th>
-                            <th>
-                                <form style="display:inline-block" method="POST" action="{{ route('admin.comments.destroy', [ 'id' => $upload->id, 'rid' => $comment->id]) }}">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <button type="submit" class="form-control btn btn-danger">Delete</a>
-                                </form>
-                            </th>
                         </tr>
                         @endforeach
                     </tbody>

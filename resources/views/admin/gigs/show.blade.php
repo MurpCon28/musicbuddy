@@ -22,7 +22,6 @@
                     <p class="card-text"><b>Loction:</b> {{ $gig->location }}, Co. {{ $gig->county->name }} <br> <b>Date and Time (Y-M-D):</b> {{ $gig->dateTime }} <br> <b>Price:</b> €{{ $gig->price }} <br> <b>Genre:</b> {{ $gig->genre }}</p>
                     <p class="card-text"><small class="text-muted">Posted By: {{ $gig->user->name }}</small></p>
                     <a href="{{ route('admin.gigs.index') }}" class="btn btn-default">Back</a>
-                    <a href="{{ route('admin.gigs.edit', $gig->id) }}" class="btn btn-warning">Edit</a>
                     <form style="display:inline-block" method="POST" action="{{  route('admin.gigs.destroy', $gig->id)  }}">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">

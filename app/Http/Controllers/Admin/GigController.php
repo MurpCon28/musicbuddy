@@ -46,6 +46,15 @@ class GigController extends Controller
       ]);
     }
 
+    public function mygigshow($id)
+    {
+      $gigs = Gig::findOrFail($id);
+
+      return view('admin.mygig.show', [
+        'gigs' => $gigs
+      ]);
+    }
+
     // public function gigshow($id)
     // {
     //   $gig = Gig::findOrFail($id);
