@@ -5,21 +5,21 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <br>
-              <h4>My Favourites</h4>
-              {{-- @if (count($favourites) == 0) --}}
-              @if (count(array(Auth::user()->favourites)) == 0)
+              <h2>My Favourites</h2>
+              @if (count($favourites) == 0)
+              {{-- @if (count(array(Auth::user()->favourites)) == 0) --}}
               {{-- @if (count(Auth::user()->favourites) == 0) --}}
                 <br>
                 <p>There are no favourites!</p>
               @else
-            @foreach(Auth::user()->favourites as $favourite)
+            @foreach($favourites as $favourite)
             {{-- @foreach(Auth::user()->favourites ?? [] as $favourite) --}}
 
               <div class="col-md-12">
 
                   <div class="card-group">
                     <div class="card data-id="{{ $favourite->id }}"">
-                      {{-- <a href="{{ route('admin.uploads.show', $upload->id) }}"> --}}
+                      {{-- <a href="{{ route('admin.favourites.show', $favourite->upload->id) }}"> --}}
                       <div class="typeBanner">
                         {{ $favourite->upload->type->name }}
                       </div>

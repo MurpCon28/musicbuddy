@@ -14,28 +14,44 @@ class FavouriteSeeder extends Seeder
      */
     public function run()
     {
-        // $favourite = new Favourite();
-        // // $favourite->favourite = 2;
-        // $favourite->user_id = 1;
-        // $favourite->upload_id = 1;
-        // $favourite->save();
-        //
-        // $favourite = new Favourite();
-        // // $favourite->favourite = 1;
-        // $favourite->user_id = 2;
-        // $favourite->upload_id = 1;
-        // $favourite->save();
-        //
-        // $favourite = new Favourite();
-        // // $favourite->favourite = 4;
-        // $favourite->user_id = 4;
-        // $favourite->upload_id = 2;
-        // $favourite->save();
-        //
-        // $favourite = new Favourite();
-        // // $favourite->favourite = 3;
-        // $favourite->user_id = 3;
-        // $favourite->upload_id = 3;
-        // $favourite->save();
+        $favourite = new Favourite();
+        $favourite->user_id = 1;
+        $favourite->upload_id = 1;
+        $favourite->save();
+
+        $favourite = new Favourite();
+        $favourite->user_id = 2;
+        $favourite->upload_id = 1;
+        $favourite->save();
+
+        $favourite = new Favourite();
+        $favourite->user_id = 4;
+        $favourite->upload_id = 2;
+        $favourite->save();
+
+        $favourite = new Favourite();
+        $favourite->user_id = 3;
+        $favourite->upload_id = 3;
+        $favourite->save();
+
+        $favourite = new Favourite();
+        $favourite->user_id = 5;
+        $favourite->upload_id = 7;
+        $favourite->save();
+
+        $favourite = new Favourite();
+        $favourite->user_id = 2;
+        $favourite->upload_id = 3;
+        $favourite->save();
+
+        $favourite = new Favourite();
+        $favourite->user_id = 5;
+        $favourite->upload_id = 4;
+        $favourite->save();
+
+        $favourite = new Favourite();
+        $favourite->user_id = 2;
+        $favourite->upload_id = 8;
+        $favourite->save();
     }
 }

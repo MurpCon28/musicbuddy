@@ -21,7 +21,8 @@ class CreateFavouritesTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('upload_id')->references('id')->on('uploads');
+            // $table->foreign('upload_id')->references('id')->on('uploads');
+            $table->foreign('upload_id')->references('id')->on('uploads')->onDelete('cascade');
         });
     }
 

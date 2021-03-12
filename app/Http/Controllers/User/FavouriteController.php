@@ -23,12 +23,12 @@ class FavouriteController extends Controller
      */
     public function index()
     {
-      // $favourites = Favourite::all();
-      //
-      // return view('admin.favourites.index', [
-      // 'favourites' => $favourites]);
+      $favourites = Favourite::all()->where('user_id', Auth::user()->id);
 
-        return view('user.favourites.index');
+      return view('user.favourites.index', [
+      'favourites' => $favourites]);
+
+        // return view('user.favourites.index');
     }
 
     /**
@@ -66,7 +66,11 @@ class FavouriteController extends Controller
      */
     public function show($id)
     {
-        //
+      $favourite = Favourite::findOrFail($id);
+
+      return view('user.favourites.show', [
+        'favourite' => $favourite
+        ]);
     }
 
     /**
@@ -100,7 +104,7 @@ class FavouriteController extends Controller
      */
     public function destroy($id)
     {
-      $favourite = Favourite::where('upload_id', $id);
+      $favourite = Favourite::where('upload_id', $id)->where('user_id', Auth::user()->id);
 
       $favourite ->delete();
 

@@ -141,7 +141,7 @@ class UploadController extends Controller
       $request->validate([
         'video' => 'required|max:500',
         'title' => 'required|max:191',
-        'description' => 'required|max:191',
+        'description' => 'required|max:500',
         'type_id' => 'required',
         'tag_id' => 'required'
       ]);
@@ -210,7 +210,7 @@ class UploadController extends Controller
       $request->validate([
         'video' => 'required|max:500',
         'title' => 'required|max:191',
-        'description' => 'required|max:191',
+        'description' => 'required|max:500',
         'type_id' => 'required',
         'tag_id' => 'required'
       ]);

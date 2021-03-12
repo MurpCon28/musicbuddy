@@ -82,10 +82,12 @@ Route::get('/user/mygig/{id}', [UserGigController::class, 'mygigshow'])->name('u
 
 Route::get('/admin/favourites/', [AdminFavouriteController::class, 'index'])->name('admin.favourites.index');
 Route::post('/admin/uploads/{id}/favourites/', [AdminFavouriteController::class, 'store'])->name('admin.favourites.store');
+Route::get('/admin/favourites/{id}', [AdminFavouriteController::class, 'show'])->name('admin.favourites.show');
 Route::delete('/admin/favoutites/{id}', [AdminFavouriteController::class, 'destroy'])->name('admin.favourites.destroy');
 
 Route::get('/user/favourites/', [UserFavouriteController::class, 'index'])->name('user.favourites.index');
 Route::post('/user/uploads/{id}/favourites/', [UserFavouriteController::class, 'store'])->name('user.favourites.store');
+Route::get('/user/favourites/{id}', [UserFavouriteController::class, 'show'])->name('user.favourites.show');
 Route::delete('/user/favourites/{id}', [UserFavouriteController::class, 'destroy'])->name('user.favourites.destroy');
 
 Route::get('/admin/uploads/{id}/comments/create', [AdminCommentController::class, 'create'])->name('admin.comments.create');

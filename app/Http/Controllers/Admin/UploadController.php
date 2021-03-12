@@ -146,7 +146,7 @@ class UploadController extends Controller
       $request->validate([
         'video' => 'required|max:500',
         'title' => 'required|max:191',
-        'description' => 'required|max:191',
+        'description' => 'required|max:500',
         'type_id' => 'required',
         'tag_id' => 'required'
       ]);
@@ -217,7 +217,7 @@ class UploadController extends Controller
             $request->validate([
               'video' => 'required|max:500',
               'title' => 'required|max:191',
-              'description' => 'required|max:191',
+              'description' => 'required|max:500',
               'type_id' => 'required',
               'tag_id' => 'required'
             ]);
@@ -248,11 +248,13 @@ class UploadController extends Controller
     {
       $upload = Upload::findOrFail($id);
       // $comment = Comment::findOrFail($id);
+      // $upload->comment ->delete();
       // $comment ->delete();
+      // $comment->upload ->delete();
       // Comment::delete();
       // $comment = Comment::delete();
-      // $favourite = Favourite::where('upload_id', $id);
-      // $favourite ->delete();
+      // $favourite = Favourite::where('upload_id', $id)->where('user_id', Auth::user()->id);
+      // $upload->favourite ->delete();
       // Favourite::delete();
       // $favourite = Favourite::delete();
       $upload->delete();

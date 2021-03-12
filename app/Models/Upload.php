@@ -28,6 +28,10 @@ class Upload extends Model
       return $this->hasMany('App\Models\Comment');
     }
 
+    public function favourites() {
+      return $this->hasMany('App\Models\Favourite');
+    }
+
     public function uploaddesc($query)
     {
             return $query->orderBy('created_at','DESC');
