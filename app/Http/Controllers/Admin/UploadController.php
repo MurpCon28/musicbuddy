@@ -8,6 +8,8 @@ use App\Models\Upload;
 use App\Models\User;
 use App\Models\Type;
 use App\Models\Tag;
+use App\Models\Comment;
+use App\Models\Favourite;
 use Auth;
 
 class UploadController extends Controller
@@ -241,9 +243,18 @@ class UploadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // public function destroy($id, $rid)
     public function destroy($id)
     {
       $upload = Upload::findOrFail($id);
+      // $comment = Comment::findOrFail($id);
+      // $comment ->delete();
+      // Comment::delete();
+      // $comment = Comment::delete();
+      // $favourite = Favourite::where('upload_id', $id);
+      // $favourite ->delete();
+      // Favourite::delete();
+      // $favourite = Favourite::delete();
       $upload->delete();
 
       // $request->session()->flash('danger', 'Video deleted successfuly');

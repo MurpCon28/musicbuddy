@@ -4,16 +4,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-
             <br>
-
-
               <h4>My Favourites</h4>
-              {{-- @if (count(Auth::user()->favouritesfavourites) == 0)
+              {{-- @if (count($favourites) == 0) --}}
+              @if (count(array(Auth::user()->favourites)) == 0)
+              {{-- @if (count(Auth::user()->favourites) == 0) --}}
                 <br>
                 <p>There are no favourites!</p>
-              @else --}}
+              @else
             @foreach(Auth::user()->favourites as $favourite)
+            {{-- @foreach(Auth::user()->favourites ?? [] as $favourite) --}}
 
               <div class="col-md-12">
 
@@ -35,6 +35,7 @@
                   <br>
                   <br>
             @endforeach
-    </div>
-</div>
+          @endif
+      </div>
+  </div>
 @endsection

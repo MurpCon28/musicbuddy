@@ -86,7 +86,7 @@ Route::delete('/admin/favoutites/{id}', [AdminFavouriteController::class, 'destr
 
 Route::get('/user/favourites/', [UserFavouriteController::class, 'index'])->name('user.favourites.index');
 Route::post('/user/uploads/{id}/favourites/', [UserFavouriteController::class, 'store'])->name('user.favourites.store');
-Route::delete('/user/favoutites/{id}', [UserFavouriteController::class, 'destroy'])->name('user.favourites.destroy');
+Route::delete('/user/favourites/{id}', [UserFavouriteController::class, 'destroy'])->name('user.favourites.destroy');
 
 Route::get('/admin/uploads/{id}/comments/create', [AdminCommentController::class, 'create'])->name('admin.comments.create');
 Route::post('/admin/uploads/{id}/comments/', [AdminCommentController::class, 'store'])->name('admin.comments.store');

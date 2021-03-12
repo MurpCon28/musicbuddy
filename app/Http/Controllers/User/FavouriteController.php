@@ -23,6 +23,11 @@ class FavouriteController extends Controller
      */
     public function index()
     {
+      // $favourites = Favourite::all();
+      //
+      // return view('admin.favourites.index', [
+      // 'favourites' => $favourites]);
+
         return view('user.favourites.index');
     }
 
@@ -49,7 +54,8 @@ class FavouriteController extends Controller
       $favourite->upload_id = $id;
       $favourite->save();
 
-      return redirect()->route('user.home');
+      return redirect()->route('user.uploads.index');
+        // return redirect()->route('user.favourites.store', $id);
     }
 
     /**

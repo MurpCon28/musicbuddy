@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('user.layouts.app')
 
 @section('content')
 <div class="container">
@@ -9,7 +9,7 @@
 
 
               <h4>My Favourites</h4>
-              {{-- @if (count(Auth::user()->favouritesfavourites) == 0)
+              {{-- @if (count(Auth::user()->favourites) == 0)
                 <br>
                 <p>There are no favourites!</p>
               @else --}}
@@ -38,8 +38,7 @@
 
 
             @endforeach
-            {{-- <a href="{{ ('http://music.buddy:8000/admin/uploads/1') }}" type="submit" class="btn btn-primary pull-right">View Favourites</a> --}}
-
+            {{-- @endif --}}
     </div>
 </div>
 @endsection

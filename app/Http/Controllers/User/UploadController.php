@@ -8,6 +8,8 @@ use App\Models\Upload;
 use App\Models\User;
 use App\Models\Type;
 use App\Models\Tag;
+use App\Models\Comment;
+use App\Models\Favourite;
 use Auth;
 
 class UploadController extends Controller

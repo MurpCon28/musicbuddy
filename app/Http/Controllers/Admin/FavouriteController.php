@@ -22,17 +22,16 @@ class FavouriteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+     public function index()
+     {
+       $favourites = Favourite::all();
 
-      // $uploads = Upload::all();
-      //
-      // return view('admin.favourites.index', [
-      //   'uploads' => $uploads
-      // ]);
+       return view('admin.favourites.index', [
+       'favourites' => $favourites
+       ]);
 
-        return view('admin.favourites.index');
-    }
+       // return view('admin.favourites.index');
+     }
 
     /**
      * Show the form for creating a new resource.
@@ -57,7 +56,7 @@ class FavouriteController extends Controller
       $favourite->upload_id = $id;
       $favourite->save();
 
-      return redirect()->route('admin.home');
+      return redirect()->route('admin.uploads.index');
         // return redirect()->route('admin.favourites.store', $id);
     }
 
