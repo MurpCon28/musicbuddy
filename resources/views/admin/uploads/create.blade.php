@@ -5,8 +5,8 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="card">
-          <div class="card-header">
-              Add new video
+          <div class="card-header typeBanner">
+            <h5 class="bannerFont">Add new video</h5>
             </div>
 
             <div class="class-body">

@@ -7,8 +7,8 @@
         <div class="row">
           <div class="col-md-6">
             <div class="card">
-                <div class="card-header">
-                    Video Type: {{ $upload->type->name }}
+                <div class="card-header typeBanner">
+                    <h5 class="bannerFont">{{ $upload->type->name }}</h5>
                   </div>
                       <iframe width="538" height="325" src="{{ url($upload->video) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       <br>

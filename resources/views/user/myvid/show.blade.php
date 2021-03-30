@@ -7,8 +7,8 @@
         <div class="row">
           <div class="col-md-6">
             <div class="card">
-                <div class="card-header">
-                    Video Type: {{ $upload->type->name }}
+              <div class="typeBanner">
+                <h5 class="bannerFont">{{ $upload->type->name }}</h5>
                   </div>
                       <iframe width="538" height="325" src="{{ url($upload->video) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       <br>
@@ -18,21 +18,6 @@
                       <p class="card-text"><small class="text-muted">{{ $upload->user->name }}</small></p>
                       <p class="card-text"><small class="text-muted">{{ $upload->tag->name }}</small></p>
                     <a href="{{ route('user.myvid.index') }}" class="btn btn-default">Back</a>
-
-                    @if (App\Models\Favourite::where('upload_id', '=', $upload->id)->exists())
-                      <form style="display:inline-block" method="POST" action="{{ route('user.favourites.destroy', $upload->id) }}">
-                        <button type="submit" class="btn btn-danger pull-right">Remove from Favourites</button>
-                        <input type="hidden" value="DELETE" name="_method">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                      </form>
-
-                    @else
-                      <form style="display:inline-block" method="POST" action="{{ route('user.favourites.store', $upload->id) }}">
-                        <button type="submit" class="btn btn-primary pull-right">Add to Favourites</button>
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                      </form>
-                    @endif
-
                     <a href="{{ route('user.uploads.edit', $upload->id) }}" class="btn btn-warning">Edit</a>
                     <form style="display:inline-block" method="POST" action="{{ route('user.uploads.destroy', $upload->id) }}">
                         <input type="hidden" name="_method" value="DELETE">

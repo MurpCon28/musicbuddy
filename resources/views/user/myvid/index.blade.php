@@ -18,9 +18,9 @@
           <div class="card-group">
             <div class="card data-id="{{ $upload->id }}"">
               <a href="{{ route('user.myvid.show', $upload->id) }}">
-              <div class="typeBanner">
-                {{ $upload->type->name }}
-              </div>
+                <div class="typeBanner">
+                  <h5 class="bannerFont">{{ $upload->type->name }}</h5>
+                </div>
               <iframe width="560" height="315" src="{{ url($upload->video) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="card-body">
                 <h5 class="card-title">{{ $upload->title }}</h5>

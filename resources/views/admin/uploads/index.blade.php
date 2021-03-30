@@ -2,11 +2,11 @@
 
 @section('content')
   <div class="container">
-    <select class="float-right form-select form-select-sm" aria-label=".form-select-sm example">
+    {{-- <select class="float-right form-select form-select-sm" aria-label=".form-select-sm example">
       <option selected>Order By</option>
       <option value="newest">Newest</option>
       <option value="oldest">Oldest</option>
-    </select>
+    </select> --}}
     <br>
     <br>
     <div class="row">

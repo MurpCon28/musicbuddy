@@ -11,7 +11,7 @@
           <div class="row">
             <div class="card">
               <div class="card-header banner">
-                <h5>Gigs
+                <h5 class="bannerFont">Gigs
                 {{-- <a href="{{ route('admin.gigs.create') }}" class="btn btn-primary float-left">Calendar</a> --}}
                 <a href="{{ route('admin.gigs.create') }}" class="btn btn-primary float-right">Add</a>
               </h5>

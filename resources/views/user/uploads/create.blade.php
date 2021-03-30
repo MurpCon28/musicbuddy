@@ -5,8 +5,8 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="card">
-          <div class="card-header">
-              Add new video
+          <div class="card-header typeBanner">
+            <h5 class="bannerFont">Add new video</h5>
             </div>
 
             <div class="class-body">
@@ -22,7 +22,7 @@
               <form method="POST" action="{{ route('user.uploads.store') }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
-                  <label for="video">Video (url link from embed video from iframe)</label>
+                  <label for="video">Video (embed video from iframe "https://www.youtube.com/embed/E3NC88xGQ_A")</label>
                   <input type="text" class="form-control" id="video" name="video" value="{{ old('video') }}">
                 </div>
                 <div class="form-group">

@@ -5,8 +5,8 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="card">
-          <div class="card-header">
-            Edit Gig
+          <div class="card-header banner">
+            <h5 class="bannerFont"> Edit Gigs </h5>
           </div>
 
           <div class="card-body">
